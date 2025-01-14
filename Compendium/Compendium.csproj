@@ -6,4 +6,11 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Armory\" />
+    <Folder Include="Bestiary\" />
+    <Folder Include="Items\" />
+    <Folder Include="Player\" />
+  </ItemGroup>
+
 </Project>
