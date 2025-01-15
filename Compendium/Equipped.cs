@@ -4,7 +4,6 @@
 
 namespace Compendium;
 
-public class Player(string name, CharacterStats stats) : CharacterBase(name, stats)
+public class Equipped
 {
-    public int Currency { get; set; } = 0;
 }

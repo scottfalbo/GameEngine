@@ -4,13 +4,15 @@
 
 namespace Compendium;
 
-public class CharacterStats(int health, int strength, int dexterity, int intelligence)
+public class CharacterStats(int armor, int health, int strength, int dexterity, int intelligence)
 {
-    public int Dexterity { get; private set; } = dexterity;
+    public int Armor { get; set; } = armor;
 
-    public int Health { get; private set; } = health;
+    public int Dexterity { get; set; } = dexterity;
 
-    public int Intelligence { get; private set; } = intelligence;
+    public int Health { get; set; } = health;
 
-    public int Strength { get; private set; } = strength;
+    public int Intelligence { get; set; } = intelligence;
+
+    public int Strength { get; set; } = strength;
 }
