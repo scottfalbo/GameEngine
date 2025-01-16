@@ -6,11 +6,18 @@ using Compendium;
 
 namespace Mechanics;
 
-public class Combat(Player player, List<Creature> creatures)
+public class Combat
 {
-    private readonly List<Creature> _creatures = creatures;
+    private readonly IEnumerable<Creature> _creatures;
 
-    private readonly Dice _dice = new();
+    private readonly Dice _dice;
 
-    private readonly Player _player = player;
+    private readonly Player _player;
+
+    public Combat(IEnumerable<Creature> creatures, Player player)
+    {
+        _creatures = creatures;
+        _dice = new();
+        _player = player;
+    }
 }
