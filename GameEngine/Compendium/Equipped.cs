@@ -2,8 +2,8 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-namespace Compendium;
+namespace GameEngine.Compendium;
 
-public abstract class EquipmentBase(string name) : ItemBase(name)
+public class Equipped
 {
 }

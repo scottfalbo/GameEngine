@@ -2,8 +2,9 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-namespace Compendium;
+namespace GameEngine.Compendium;
 
-public class NPC(string name, CharacterStats stats) : CharacterBase(name, stats)
+public abstract class ItemBase(string name)
 {
+    public string Name { get; private set; } = name;
 }

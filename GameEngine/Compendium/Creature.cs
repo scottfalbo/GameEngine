@@ -2,8 +2,8 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-namespace Compendium;
+namespace GameEngine.Compendium;
 
-public class Equipped
+public class Creature(string name, CharacterStats stats) : CharacterBase(name, stats)
 {
 }

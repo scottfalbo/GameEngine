@@ -2,9 +2,9 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-using Compendium;
+using GameEngine.Compendium;
 
-namespace Mechanics;
+namespace GameEngine.Mechanics;
 
 public class Combat
 {

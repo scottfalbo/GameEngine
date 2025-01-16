@@ -2,7 +2,7 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-namespace Compendium;
+namespace GameEngine.Compendium;
 
 public class CharacterStats(int armor, int health, int strength, int dexterity, int intelligence)
 {

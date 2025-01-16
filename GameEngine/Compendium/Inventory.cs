@@ -2,9 +2,8 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-namespace Compendium;
+namespace GameEngine.Compendium;
 
-public abstract class ItemBase(string name)
+public class Inventory
 {
-    public string Name { get; private set; } = name;
 }
