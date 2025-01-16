@@ -1,14 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-	<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<Folder Include="Codex\" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Codex\" />
-  </ItemGroup>
-
+	<Target Name="PostBuild" AfterTargets="Build">
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="C:\Users\scott\source\repos\Unity\Sandboxing\Assets\Plugins" />
+	</Target>
+	
 </Project>
