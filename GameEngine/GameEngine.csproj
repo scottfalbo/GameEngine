@@ -7,6 +7,12 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Compendium\Codex\" />
+    <Folder Include="GameState\" />
+    <Folder Include="Factories\" />
+  </ItemGroup>
+
   <Target Name="PostBuild" AfterTargets="Build">
     <Copy SourceFiles="$(TargetPath)" DestinationFolder="C:\Users\scott\source\repos\Unity\Sandboxing\Assets\Plugins" />
   </Target>
