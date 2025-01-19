@@ -6,4 +6,5 @@ namespace GameEngine.Compendium;
 
 public class PlayerCreationSheet(string name) : CreationSheetBase(name)
 {
+    public int Currency { get; set; }
 }

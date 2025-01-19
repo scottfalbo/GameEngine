@@ -24,4 +24,9 @@ public class Player(string name, CharacterStats stats) : CharacterBase(name, sta
     {
         Currency -= amount;
     }
+
+    public void SetCurrency(int amount)
+    {
+        Currency = amount;
+    }
 }
