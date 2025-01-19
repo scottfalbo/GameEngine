@@ -37,6 +37,11 @@ public class Inventory
     {
         _maxSlots -= amount;
 
+        if (_maxSlots < 0)
+        {
+            _maxSlots = 0;
+        }
+
         for (var i = 0; i < amount; i++)
         {
             _slots.Remove(_maxSlots + i);

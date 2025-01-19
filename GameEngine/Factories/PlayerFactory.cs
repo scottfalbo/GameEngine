@@ -17,6 +17,9 @@ public class PlayerFactory
         var inventory = new Inventory(10);
         player.AddInventory(inventory);
 
+        var equipped = new Equipped(armorSlots: 1, weaponSlots: 1);
+        player.AddEquipped(equipped);
+
         return player;
     }
 }

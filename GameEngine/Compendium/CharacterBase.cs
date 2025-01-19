@@ -14,6 +14,11 @@ public abstract class CharacterBase(string name, CharacterStats stats)
 
     public CharacterStats Stats { get; private set; } = stats;
 
+    public void AddEquipped(Equipped equipped)
+    {
+        Equipped = equipped;
+    }
+
     public void AddInventory(Inventory inventory)
     {
         Inventory = inventory;
