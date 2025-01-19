@@ -85,6 +85,10 @@ public class Equipped
         return true;
     }
 
+    public Dictionary<int, Armor?> GetArmor() => _armor;
+
+    public Dictionary<int, Weapon?> GetWeapons() => _weapons;
+
     public void IncreaseArmorSlots(int amount)
     {
         _armorSlots += amount;
