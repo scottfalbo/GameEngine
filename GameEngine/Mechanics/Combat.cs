@@ -20,4 +20,10 @@ public class Combat
         _dice = new();
         _player = player;
     }
+
+    // player acts
+    // need to figure out that this looks like
+    // creatures act
+    // repeat until all creatures are dead or player is dead
+    // handle loot
 }

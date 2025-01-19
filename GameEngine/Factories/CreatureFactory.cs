@@ -6,14 +6,14 @@ using GameEngine.Compendium;
 
 namespace GameEngine.Factories;
 
-public class PlayerFactory
+public class CreatureFactory
 {
-    public static Player Create(string name, CharacterStats stats)
+    public static Creature Create(string name, CharacterStats stats)
     {
-        var player = new Player(name, stats);
+        var creature = new Creature(name, stats);
 
-        player.AddCurrency(10);
+        creature.AddLoot(5);
 
-        return player;
+        return creature;
     }
 }

@@ -9,9 +9,8 @@ namespace GameEngine;
 public class GameState
 {
     private static GameState? _instance;
-    public static GameState? Instance => _instance ??= new GameState();
 
-    public string? CurrentCharacterName { get; set; }
+    public static GameState? Instance => _instance ??= new GameState();
 
     public Player? Player { get; set; }
 
