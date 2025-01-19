@@ -10,6 +10,9 @@ public class PotionFactory
 {
     public Potion Create(string name)
     {
-        return new Potion(name);
+        var potion = new Potion(name);
+        potion.SetIsStackable(true);
+
+        return potion;
     }
 }

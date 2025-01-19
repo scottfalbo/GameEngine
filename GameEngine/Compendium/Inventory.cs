@@ -61,7 +61,7 @@ public class Inventory
 
         for (var i = 0; i < amount; i++)
         {
-            _slots[_maxSlots + i] = new InventorySlot();
+            _slots.Add(_maxSlots + i, new InventorySlot());
         }
     }
 
