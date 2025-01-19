@@ -227,28 +227,81 @@ public class InventoryTests
     }
 
     [TestMethod]
-    public void MoveItem_MovesItem()
+    public void MoveItem_MovesItemToNewSlot()
     {
         // Arrange
         var quantity = 1;
-        var sourceSlot = 0;
-        var targetSlot = 1;
+        var slot = 0;
+        var newSlot = 1;
 
-        _inventory.AddItem(sourceSlot, _potion, quantity);
+        _inventory.AddItem(slot, _potion, quantity);
 
         // Act
-        var result = _inventory.MoveItem(sourceSlot, targetSlot);
+        var result = _inventory.MoveItem(slot, newSlot);
 
         // Assert
         var inventorySlots = _inventory.GetInventory();
 
         Assert.IsTrue(result);
 
-        Assert.AreEqual(expected: 0, inventorySlots[sourceSlot].Quantity);
-        Assert.IsNull(inventorySlots[sourceSlot].Item);
+        Assert.AreEqual(expected: 0, inventorySlots[slot].Quantity);
+        Assert.IsNull(inventorySlots[slot].Item);
 
-        Assert.AreEqual(expected: 1, inventorySlots[targetSlot].Quantity);
-        Assert.AreEqual(_potion, inventorySlots[targetSlot].Item);
+        Assert.AreEqual(expected: 1, inventorySlots[newSlot].Quantity);
+        Assert.AreEqual(_potion, inventorySlots[newSlot].Item);
+    }
+
+    [TestMethod]
+    public void MoveItem_ReturnsFalse_WhenSourceSlotIsOutOfRange()
+    {
+        // Arrange
+        var slot = _maxSlots + 1;
+        var newSlot = 0;
+
+        // Act
+        var result = _inventory.MoveItem(slot, newSlot);
+
+        // Assert
+        Assert.IsFalse(result);
+    }
+
+    [TestMethod]
+    public void MoveItem_ReturnsFalse_WhenTargetSlotIsOutOfRange()
+    {
+        // Arrange
+        var slot = 0;
+        var newSlot = _maxSlots + 1;
+
+        // Act
+        var result = _inventory.MoveItem(slot, newSlot);
+
+        // Assert
+        Assert.IsFalse(result);
+    }
+
+    [TestMethod]
+    public void MoveItem_SwapsItemsIfTargetIsOccupied()
+    {
+        // Arrange
+        var quantity = 1;
+        var slot = 0;
+        var newSlot = 1;
+
+        _inventory.AddItem(slot, _potion, quantity);
+        _inventory.AddItem(newSlot, _weapon, quantity);
+
+        // Act
+        var result = _inventory.MoveItem(slot, newSlot);
+
+        // Assert
+        var inventorySlots = _inventory.GetInventory();
+
+        Assert.IsTrue(result);
+        Assert.AreEqual(expected: 1, inventorySlots[slot].Quantity);
+        Assert.AreEqual(_weapon, inventorySlots[slot].Item);
+
+        Assert.AreEqual(expected: 1, inventorySlots[newSlot].Quantity);
+        Assert.AreEqual(_potion, inventorySlots[newSlot].Item);
     }
 
     [TestMethod]

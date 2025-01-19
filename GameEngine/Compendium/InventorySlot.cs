@@ -6,6 +6,7 @@ namespace GameEngine.Compendium;
 
 public class InventorySlot
 {
+    public bool HasItem => Item != null;
     public ItemBase? Item { get; private set; }
 
     public int Quantity { get; private set; } = 0;

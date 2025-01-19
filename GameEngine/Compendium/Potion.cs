@@ -4,6 +4,10 @@
 
 namespace GameEngine.Compendium;
 
-public class Potion(string name) : ItemBase(name)
+public class Potion : ItemBase
 {
+    public Potion(string name) : base(name)
+    {
+        SetIsStackable(true);
+    }
 }

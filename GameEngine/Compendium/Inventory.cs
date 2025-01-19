@@ -75,16 +75,14 @@ public class Inventory
         return _slots[slot].IncreaseQuantity(amount);
     }
 
-    public bool MoveItem(int sourceSlot, int targetSlot)
+    public bool MoveItem(int source, int target)
     {
-        if (!IsInRange(targetSlot) || !_slots.TryGetValue(sourceSlot, out var item) || _slots.ContainsKey(targetSlot))
+        if (!IsInRange(target) || !IsInRange(source) || !_slots[source].HasItem)
         {
             return false;
         }
 
-        _slots[targetSlot] = item;
-
-        _slots[sourceSlot].RemoveItem();
+        (_slots[source], _slots[target]) = (_slots[target], _slots[source]);
 
         return true;
     }

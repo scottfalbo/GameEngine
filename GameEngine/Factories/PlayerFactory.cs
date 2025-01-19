@@ -14,6 +14,9 @@ public class PlayerFactory
 
         player.AddCurrency(10);
 
+        var inventory = new Inventory(10);
+        player.AddInventory(inventory);
+
         return player;
     }
 }
