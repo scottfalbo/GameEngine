@@ -8,7 +8,7 @@ namespace GameEngine.Factories;
 
 public class PlayerFactory
 {
-    public static Player Create(string name, CharacterStats stats)
+    public Player Create(string name, CharacterStats stats)
     {
         var player = new Player(name, stats);
 

@@ -8,7 +8,7 @@ namespace GameEngine.Factories;
 
 public class PotionFactory
 {
-    public static Potion Create(string name)
+    public Potion Create(string name)
     {
         return new Potion(name);
     }

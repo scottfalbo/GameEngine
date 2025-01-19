@@ -8,7 +8,7 @@ namespace GameEngine.Factories;
 
 public class CreatureFactory
 {
-    public static Creature Create(string name, CharacterStats stats)
+    public Creature Create(string name, CharacterStats stats)
     {
         var creature = new Creature(name, stats);
 

@@ -26,6 +26,24 @@ public class InventoryTests
     }
 
     [TestMethod]
+    public void AddItem_AddsItemToInventorySlot()
+    {
+        // Arrange
+        var potion = _potionFactory.Create("Health Potion");
+        var quantity = 1;
+        var slot = 0;
+
+        // Act
+        _inventory.AddItem(slot, potion, quantity);
+
+        // Assert
+        var inventorySlots = _inventory.GetInventory();
+
+        Assert.AreEqual(expected: 1, inventorySlots[slot].Quantity);
+        Assert.AreEqual(potion, inventorySlots[slot].Item);
+    }
+
+    [TestMethod]
     public void Constructor_InstantiatesInventoryWithSlots()
     {
         // Arrange

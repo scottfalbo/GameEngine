@@ -17,9 +17,9 @@ public class Inventory
         _maxSlots = maxSlots;
         _slots = [];
 
-        foreach (var slot in _slots)
+        for (var i = 0; i < maxSlots; i++)
         {
-            _slots[slot.Key] = new InventorySlot();
+            _slots.Add(i, new InventorySlot());
         }
     }
 

@@ -8,7 +8,7 @@ namespace GameEngine.Factories;
 
 public class WeaponFactory
 {
-    public static Weapon Create(string name, int damage)
+    public Weapon Create(string name, int damage)
     {
         return new Weapon(name, damage);
     }
