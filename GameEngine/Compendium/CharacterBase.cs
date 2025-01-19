@@ -10,6 +10,8 @@ public abstract class CharacterBase(string name, CharacterStats stats)
 
     public Inventory? Inventory { get; private set; }
 
+    public int Level { get; private set; } = 1;
+
     public string Name { get; private set; } = name;
 
     public CharacterStats Stats { get; private set; } = stats;
@@ -22,5 +24,15 @@ public abstract class CharacterBase(string name, CharacterStats stats)
     public void AddInventory(Inventory inventory)
     {
         Inventory = inventory;
+    }
+
+    public void AddLevel(int amount)
+    {
+        Level += amount;
+    }
+
+    public void SetLevel(int amount)
+    {
+        Level = amount;
     }
 }
