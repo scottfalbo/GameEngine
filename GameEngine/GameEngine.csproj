@@ -9,12 +9,10 @@
 
   <ItemGroup>
     <Folder Include="Compendium\Codex\" />
-    <Folder Include="GameState\" />
-    <Folder Include="Factories\" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="Build">
-    <Copy SourceFiles="$(TargetPath)" DestinationFolder="C:\Users\scott\source\repos\Unity\Sandboxing\Assets\Plugins" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="C:\Users\scott\source\repos\Unity\RPG_v1\Assets\Plugins" />
   </Target>
 	
 </Project>

@@ -1,0 +1,21 @@
+﻿// ------------------------------------------
+// Game Engine: Mechanics and Collections
+// ------------------------------------------
+
+using GameEngine.Compendium;
+
+namespace GameEngine;
+
+public class GameState
+{
+    private static GameState? _instance;
+    public static GameState? Instance => _instance ??= new GameState();
+
+    public string? CurrentCharacterName { get; set; }
+
+    public Player? Player { get; set; }
+
+    private GameState()
+    {
+    }
+}
