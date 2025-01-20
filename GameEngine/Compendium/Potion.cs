@@ -10,6 +10,7 @@ public class Potion : Item
 {
     public Potion(string name) : base(name, ItemType.Potion)
     {
+        SetIsConsumable(true);
         SetIsStackable(true);
     }
 }

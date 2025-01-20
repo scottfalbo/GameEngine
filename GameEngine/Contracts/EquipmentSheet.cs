@@ -3,7 +3,8 @@
 // ------------------------------------------
 
 using GameEngine.Compendium.Codex;
-using GameEngine.Contracts;
+
+namespace GameEngine.Contracts;
 
 public class EquipmentSheet(string name, EquipmentType type) : BaseSheet(name)
 {

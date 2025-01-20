@@ -2,9 +2,7 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-using GameEngine.Contracts;
-
-namespace GameEngine.Compendium;
+namespace GameEngine.Contracts;
 
 public class CreatureSheet(string name) : CharacterSheet(name)
 {
