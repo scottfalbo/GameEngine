@@ -10,6 +10,8 @@ public class WeaponFactory
 {
     public Weapon Create(string name, int damage)
     {
-        return new Weapon(name, damage);
+        var weapon = new Weapon(name, damage);
+
+        return weapon;
     }
 }

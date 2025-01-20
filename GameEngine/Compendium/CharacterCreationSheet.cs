@@ -4,7 +4,7 @@
 
 namespace GameEngine.Compendium;
 
-public abstract class CreationSheetBase(string name)
+public abstract class CharacterCreationSheet(string name)
 {
     public int Armor { get; set; }
 
