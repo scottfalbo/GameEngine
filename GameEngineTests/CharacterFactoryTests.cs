@@ -112,7 +112,7 @@ public class CharacterFactoryTests
 
         var potion = _itemBuilder.BuildPotion();
 
-        playerSheet.Items.Add((potion, 1));
+        playerSheet.Items.Add((potion));
 
         // Act
         var player = _playerFactory.Create(playerSheet);
@@ -130,13 +130,13 @@ public class CharacterFactoryTests
         // Arrange
         var playerSheet = _characterSheetBuilder.BuildPlayerSheet();
 
-        var potion = _itemBuilder.BuildPotion();
+        var potion = _itemBuilder.WithQuantity(10).BuildPotion();
         var weapon = _equipmentBuilder.BuildWeapon();
         var armor = _equipmentBuilder.BuildArmor();
 
-        playerSheet.Items.Add((potion, 10));
-        playerSheet.Items.Add((weapon, 1));
-        playerSheet.Items.Add((armor, 1));
+        playerSheet.Items.Add((potion));
+        playerSheet.Items.Add((weapon));
+        playerSheet.Items.Add((armor));
 
         // Act
         var player = _playerFactory.Create(playerSheet);

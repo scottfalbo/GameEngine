@@ -57,9 +57,8 @@ public abstract class CharacterFactory
 
         for (var i = 0; i < creationSheet.Items.Count; i++)
         {
-            var (Item, Quantity) = creationSheet.Items[i];
-            Item.SetQuantity(Quantity);
-            inventory.AddItem(i, Item);
+            var item = creationSheet.Items[i];
+            inventory.AddItem(i, item);
         }
 
         return inventory;

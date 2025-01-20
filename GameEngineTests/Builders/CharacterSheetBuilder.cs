@@ -16,7 +16,7 @@ internal class CharacterSheetBuilder
     private int _experiencePoints = 10;
     private int _health = 20;
     private int _intelligence = 5;
-    private List<(Item Item, int Quantity)> _items = new();
+    private List<Item> _items = new();
     private int _level = 1;
     private int _lootAmount = 5;
     private int _maxInventorySlots = 10;
