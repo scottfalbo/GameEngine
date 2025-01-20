@@ -23,14 +23,14 @@ public class Inventory
         }
     }
 
-    public bool AddItem(int slot, Item item, int quantity)
+    public bool AddItem(int slot, Item item)
     {
         if (!IsInRange(slot))
         {
             return false;
         }
 
-        return _slots[slot].AddItem(item, quantity);
+        return _slots[slot].AddItem(item);
     }
 
     public void DecreaseMaxSlots(int amount)

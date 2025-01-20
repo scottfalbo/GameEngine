@@ -30,11 +30,10 @@ public class InventoryTests
     public void AddItem_AddsItemToInventorySlot()
     {
         // Arrange
-        var quantity = 1;
         var slot = 0;
 
         // Act
-        var result = _inventory.AddItem(slot, _potion, quantity);
+        var result = _inventory.AddItem(slot, _potion);
 
         // Assert
         var inventorySlots = _inventory.GetInventory();
@@ -48,13 +47,12 @@ public class InventoryTests
     public void AddItem_ReturnsFalse_WhenSlotIsOccupied()
     {
         // Arrange
-        var quantity = 1;
         var slot = 0;
 
-        _inventory.AddItem(slot, _potion, quantity);
+        _inventory.AddItem(slot, _potion);
 
         // Act
-        var result = _inventory.AddItem(slot, _weapon, quantity);
+        var result = _inventory.AddItem(slot, _weapon);
 
         // Assert
         Assert.IsFalse(result);
@@ -64,11 +62,10 @@ public class InventoryTests
     public void AddItem_ReturnsFalse_WhenSlotIsOutOfRange()
     {
         // Arrange
-        var quantity = 1;
         var slot = _maxSlots + 1;
 
         // Act
-        var result = _inventory.AddItem(slot, _potion, quantity);
+        var result = _inventory.AddItem(slot, _potion);
 
         // Assert
         Assert.IsFalse(result);
@@ -125,9 +122,10 @@ public class InventoryTests
     {
         // Arrange
         var quantity = 2;
+        _potion.SetQuantity(quantity);
         var slot = 0;
 
-        _inventory.AddItem(slot, _potion, quantity);
+        _inventory.AddItem(slot, _potion);
 
         // Act
         _inventory.DecreaseQuantity(slot, quantity);
@@ -144,9 +142,10 @@ public class InventoryTests
     {
         // Arrange
         var quantity = 2;
+        _potion.SetQuantity(quantity);
         var slot = 0;
 
-        _inventory.AddItem(slot, _potion, quantity);
+        _inventory.AddItem(slot, _potion);
 
         // Act
         _inventory.DecreaseQuantity(slot, 1);
@@ -194,7 +193,7 @@ public class InventoryTests
         var quantity = 1;
         var slot = 0;
 
-        _inventory.AddItem(slot, _potion, quantity);
+        _inventory.AddItem(slot, _potion);
 
         // Act
         var result = _inventory.IncreaseQuantity(slot, quantity);
@@ -213,7 +212,7 @@ public class InventoryTests
         var quantity = 1;
         var slot = 0;
 
-        _inventory.AddItem(slot, _weapon, quantity);
+        _inventory.AddItem(slot, _weapon);
 
         // Act
         var result = _inventory.IncreaseQuantity(slot, quantity);
@@ -226,11 +225,10 @@ public class InventoryTests
     public void MoveItem_MovesItemToNewSlot()
     {
         // Arrange
-        var quantity = 1;
         var slot = 0;
         var newSlot = 1;
 
-        _inventory.AddItem(slot, _potion, quantity);
+        _inventory.AddItem(slot, _potion);
 
         // Act
         var result = _inventory.MoveItem(slot, newSlot);
@@ -279,12 +277,11 @@ public class InventoryTests
     public void MoveItem_SwapsItemsIfTargetIsOccupied()
     {
         // Arrange
-        var quantity = 1;
         var slot = 0;
         var newSlot = 1;
 
-        _inventory.AddItem(slot, _potion, quantity);
-        _inventory.AddItem(newSlot, _weapon, quantity);
+        _inventory.AddItem(slot, _potion);
+        _inventory.AddItem(newSlot, _weapon);
 
         // Act
         var result = _inventory.MoveItem(slot, newSlot);
@@ -304,10 +301,9 @@ public class InventoryTests
     public void RemoveItem_RemovesItem()
     {
         // Arrange
-        var quantity = 1;
         var slot = 0;
 
-        _inventory.AddItem(slot, _potion, quantity);
+        _inventory.AddItem(slot, _potion);
 
         // Act
         _inventory.RemoveItem(slot);

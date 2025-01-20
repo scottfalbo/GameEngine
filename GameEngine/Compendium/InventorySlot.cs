@@ -7,16 +7,17 @@ namespace GameEngine.Compendium;
 public class InventorySlot
 {
     public bool HasItem => Item != null;
+
     public Item? Item { get; private set; }
 
     public int Quantity { get; private set; } = 0;
 
-    public bool AddItem(Item item, int quantity = 1)
+    public bool AddItem(Item item)
     {
         if (Item == null)
         {
             Item = item;
-            Quantity = quantity;
+            Quantity = item.Quantity;
 
             return true;
         }

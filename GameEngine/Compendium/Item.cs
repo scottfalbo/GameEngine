@@ -16,6 +16,8 @@ public abstract class Item(string name, ItemType type)
 
     public string Name { get; private set; } = name;
 
+    public int Quantity { get; private set; } = 1;
+
     public void SetIsConsumable(bool value)
     {
         IsConsumable = value;
@@ -24,5 +26,10 @@ public abstract class Item(string name, ItemType type)
     public void SetIsStackable(bool value)
     {
         IsStackable = value;
+    }
+
+    public void SetQuantity(int value)
+    {
+        Quantity = value;
     }
 }

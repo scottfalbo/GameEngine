@@ -8,8 +8,9 @@ namespace GameEngine.Compendium;
 
 public class Potion : Item
 {
-    public Potion(string name) : base(name, ItemType.Potion)
+    public Potion(string name, int quantity = 1) : base(name, ItemType.Potion)
     {
+        SetQuantity(quantity);
         SetIsConsumable(true);
         SetIsStackable(true);
     }
