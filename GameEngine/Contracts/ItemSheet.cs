@@ -12,6 +12,8 @@ public class ItemSheet(string name) : BaseSheet(name)
 
     public bool IsStackable { get; set; }
 
+    public int Price { get; set; }
+
     public int Quantity { get; set; }
 
     public ItemType Type { get; set; }

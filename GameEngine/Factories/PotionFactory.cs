@@ -11,7 +11,9 @@ public class PotionFactory
 {
     public Potion Create(ItemSheet creationSheet)
     {
-        var potion = new Potion(creationSheet.Name, creationSheet.Quantity);
+        var potion = new Potion(
+            creationSheet.Name,
+            creationSheet.Quantity);
 
         return potion;
     }

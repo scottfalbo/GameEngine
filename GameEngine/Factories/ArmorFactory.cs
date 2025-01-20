@@ -11,7 +11,9 @@ public class ArmorFactory : EquipmentFactory
 {
     public Armor Create(EquipmentSheet creationSheet)
     {
-        var armor = new Armor(creationSheet.Name, creationSheet.Armor);
+        var armor = new Armor(
+            creationSheet.Name,
+            creationSheet.Armor);
 
         SetStats(armor, creationSheet);
 

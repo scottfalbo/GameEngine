@@ -11,7 +11,9 @@ public class WeaponFactory : EquipmentFactory
 {
     public Weapon Create(EquipmentSheet creationSheet)
     {
-        var weapon = new Weapon(creationSheet.Name, creationSheet.Damage);
+        var weapon = new Weapon(
+            creationSheet.Name,
+            creationSheet.Damage);
 
         SetStats(weapon, creationSheet);
 
