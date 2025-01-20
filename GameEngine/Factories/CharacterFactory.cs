@@ -48,10 +48,10 @@ public class CharacterFactory
     {
         var stats = new CharacterStats(
             creationSheet.Armor,
-            creationSheet.Health,
-            creationSheet.Strength,
             creationSheet.Dexterity,
-            creationSheet.Intelligence);
+            creationSheet.Health,
+            creationSheet.Intelligence,
+            creationSheet.Strength);
 
         return stats;
     }

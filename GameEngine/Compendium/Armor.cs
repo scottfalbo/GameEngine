@@ -4,7 +4,10 @@
 
 namespace GameEngine.Compendium;
 
-public class Armor(string name, int defense) : EquipmentBase(name)
+public class Armor : EquipmentBase
 {
-    public int Defense { get; private set; } = defense;
+    public Armor(string name, int armor) : base(name)
+    {
+        SetArmor(armor);
+    }
 }

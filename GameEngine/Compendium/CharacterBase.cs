@@ -31,6 +31,20 @@ public abstract class CharacterBase(string name, CharacterStats stats)
         Level += amount;
     }
 
+    public CharacterStats GetAdjustedStats()
+    {
+        var equippedStats = Equipped!.EquippedStats;
+
+        var adjustedStats = new CharacterStats(
+            Stats.Armor + equippedStats.Armor,
+            Stats.Dexterity + equippedStats.Dexterity,
+            Stats.Health + equippedStats.Health,
+            Stats.Intelligence + equippedStats.Intelligence,
+            Stats.Strength + equippedStats.Strength);
+
+        return adjustedStats;
+    }
+
     public void SetLevel(int amount)
     {
         Level = amount;
