@@ -86,6 +86,26 @@ public class EquippedTests
     }
 
     [TestMethod]
+    public void EquipArmor_AdjustsEquippedStats()
+    {
+        // Arrange
+        var slot = 0;
+        var expectedArmor = 5;
+        var expectedIntelligence = 10;
+
+        _armor.SetArmor(expectedArmor);
+        _armor.SetIntelligence(expectedIntelligence);
+
+        // Act
+        _equipped.EquipArmor(slot, _armor);
+
+        // Assert
+        var equippedStats = _equipped.EquippedStats;
+        Assert.AreEqual(expectedArmor, equippedStats.Armor);
+        Assert.AreEqual(expectedIntelligence, equippedStats.Intelligence);
+    }
+
+    [TestMethod]
     public void EquipArmor_ReturnsFalse_WhenSlotIsOutOfRange()
     {
         // Arrange
@@ -112,6 +132,26 @@ public class EquippedTests
 
         Assert.IsTrue(result);
         Assert.AreEqual(_weapon, weaponSlots[slot]);
+    }
+
+    [TestMethod]
+    public void EquipWeapon_AdjustsEquippedStats()
+    {
+        // Arrange
+        var slot = 0;
+        var expectedStrength = 5;
+        var expectedDexterity = 10;
+
+        _weapon.SetStrength(expectedStrength);
+        _weapon.SetDexterity(expectedDexterity);
+
+        // Act
+        _equipped.EquipWeapon(slot, _weapon);
+
+        // Assert
+        var equippedStats = _equipped.EquippedStats;
+        Assert.AreEqual(expectedStrength, equippedStats.Strength);
+        Assert.AreEqual(expectedDexterity, equippedStats.Dexterity);
     }
 
     [TestMethod]
@@ -160,6 +200,29 @@ public class EquippedTests
     }
 
     [TestMethod]
+    public void UnequipArmor_AdjustsEquippedStats()
+    {
+        // Arrange
+        var slot = 0;
+
+        _armor.SetArmor(10);
+        _armor.SetHealth(10);
+
+        // Act
+        _equipped.EquipArmor(slot, _armor);
+
+        // Assert
+        var equippedStats = _equipped.EquippedStats;
+        Assert.AreEqual(10, equippedStats.Armor);
+        Assert.AreEqual(10, equippedStats.Health);
+
+        // Act
+        _equipped.UnequipArmor(slot);
+        Assert.AreEqual(0, equippedStats.Armor);
+        Assert.AreEqual(0, equippedStats.Health);
+    }
+
+    [TestMethod]
     public void UnequipArmor_RemovesArmorFromSlot()
     {
         // Arrange
@@ -173,6 +236,29 @@ public class EquippedTests
         var armorSlots = _equipped.GetArmor();
 
         Assert.IsNull(armorSlots[slot]);
+    }
+
+    [TestMethod]
+    public void UnequipWeapon_AdjustsEquippedStats()
+    {
+        // Arrange
+        var slot = 0;
+
+        _weapon.SetStrength(10);
+        _weapon.SetDexterity(10);
+
+        // Act
+        _equipped.EquipWeapon(slot, _weapon);
+
+        // Assert
+        var equippedStats = _equipped.EquippedStats;
+        Assert.AreEqual(10, equippedStats.Strength);
+        Assert.AreEqual(10, equippedStats.Dexterity);
+
+        // Act
+        _equipped.UnequipWeapon(slot);
+        Assert.AreEqual(0, equippedStats.Strength);
+        Assert.AreEqual(0, equippedStats.Dexterity);
     }
 
     [TestMethod]

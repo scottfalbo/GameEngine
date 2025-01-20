@@ -6,8 +6,10 @@ using GameEngine.Compendium;
 
 namespace GameEngine.Mechanics;
 
-public class Combat
+public class Combat : CombatRolls
 {
+    private readonly Queue<Character> _combatSequence;
+
     private readonly IEnumerable<Creature> _creatures;
 
     private readonly Dice _dice;
@@ -19,11 +21,14 @@ public class Combat
         _creatures = creatures;
         _dice = new();
         _player = player;
-    }
 
-    // player acts
-    // need to figure out that this looks like
-    // creatures act
-    // repeat until all creatures are dead or player is dead
-    // handle loot
+        _combatSequence = new();
+
+        _combatSequence.Enqueue(player);
+
+        foreach (var creature in creatures)
+        {
+            _combatSequence.Enqueue(creature);
+        }
+    }
 }

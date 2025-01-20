@@ -6,7 +6,7 @@ namespace GameEngine.Mechanics;
 
 public class Dice
 {
-    public static int Roll(int sides, int count = 1)
+    public int Roll(int sides, int count = 1)
     {
         var total = 0;
 

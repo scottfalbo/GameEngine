@@ -94,6 +94,20 @@ public class Equipped
 
     public Dictionary<int, Armor?> GetArmor() => _armor;
 
+    public int GetWeaponDamage()
+    {
+        int damage = 0;
+
+        foreach (var weapon in _weapons.Values)
+        {
+            if (weapon != null)
+            {
+                damage += weapon.Damage;
+            }
+        }
+        return damage;
+    }
+
     public Dictionary<int, Weapon?> GetWeapons() => _weapons;
 
     public void IncreaseArmorSlots(int amount)
