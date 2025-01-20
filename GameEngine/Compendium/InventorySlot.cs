@@ -28,6 +28,7 @@ public class InventorySlot
     public void DecreaseQuantity(int amount)
     {
         Quantity -= amount;
+        Item!.SetQuantity(Quantity);
 
         if (Quantity <= 0)
         {
@@ -43,6 +44,7 @@ public class InventorySlot
         }
 
         Quantity += amount;
+        Item!.SetQuantity(Quantity);
 
         return true;
     }
