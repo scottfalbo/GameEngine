@@ -20,4 +20,10 @@ internal class ItemBuilder
 
         return potion;
     }
+
+    public ItemBuilder WithIsStackable(bool isStackable)
+    {
+        _isStackable = isStackable;
+        return this;
+    }
 }

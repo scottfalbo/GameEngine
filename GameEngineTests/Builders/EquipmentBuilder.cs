@@ -8,14 +8,14 @@ namespace GameEngineTests.Builders;
 
 internal class EquipmentBuilder
 {
+    private int _armor = 10;
     private int _damage = 10;
-    private int _defense = 10;
     private string _name = string.Empty;
 
     public Armor BuildArmor()
     {
         _name = _name == string.Empty ? "Test Armor" : _name;
-        var armor = new Armor(_name, _defense);
+        var armor = new Armor(_name, _armor);
 
         return armor;
     }

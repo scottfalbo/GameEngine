@@ -3,7 +3,7 @@
 // ------------------------------------------
 
 using GameEngine.Compendium;
-using GameEngine.Factories;
+using GameEngineTests.Builders;
 
 namespace GameEngineTests;
 
@@ -11,8 +11,6 @@ namespace GameEngineTests;
 public class InventoryTests
 {
     private readonly Inventory _inventory;
-    private readonly PotionFactory _potionFactory;
-    private readonly WeaponFactory _weaponFactory;
 
     private int _maxSlots;
     private Potion _potion;
@@ -23,11 +21,9 @@ public class InventoryTests
         _maxSlots = 10;
 
         _inventory = new(_maxSlots);
-        _potionFactory = new();
-        _weaponFactory = new();
 
-        _potion = _potionFactory.Create("Test Potion");
-        _weapon = _weaponFactory.Create("Test Sword", 10);
+        _potion = new ItemBuilder().WithIsStackable(true).BuildPotion();
+        _weapon = new EquipmentBuilder().BuildWeapon();
     }
 
     [TestMethod]

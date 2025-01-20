@@ -4,7 +4,10 @@
 
 namespace GameEngine.Compendium;
 
-public class Weapon(string name, int damage) : Equipment(name)
+public class Weapon : Equipment
 {
-    public int Damage { get; private set; } = damage;
+    public Weapon(string name, int damage) : base(name)
+    {
+        SetDamage(damage);
+    }
 }

@@ -8,9 +8,9 @@ namespace GameEngine.Factories;
 
 public class PotionFactory
 {
-    public Potion Create(string name)
+    public Potion Create(EquipmentSheet creationSheet)
     {
-        var potion = new Potion(name);
+        var potion = new Potion(creationSheet.Name);
 
         return potion;
     }

@@ -6,11 +6,13 @@ using GameEngine.Compendium;
 
 namespace GameEngine.Factories;
 
-public class WeaponFactory
+public class WeaponFactory : EquipmentFactory
 {
-    public Weapon Create(string name, int damage)
+    public Weapon Create(EquipmentSheet creationSheet)
     {
-        var weapon = new Weapon(name, damage);
+        var weapon = new Weapon(creationSheet.Name, creationSheet.Damage);
+
+        SetStats(weapon, creationSheet);
 
         return weapon;
     }

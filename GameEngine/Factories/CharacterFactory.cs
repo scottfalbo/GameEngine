@@ -3,48 +3,13 @@
 // ------------------------------------------
 
 using GameEngine.Compendium;
+using GameEngine.Contracts;
 
 namespace GameEngine.Factories;
 
-public class CharacterFactory
+public abstract class CharacterFactory
 {
-    public Player Create(PlayerSheet creationSheet)
-    {
-        var stats = CreateCharacterStats(creationSheet);
-
-        var player = new Player(creationSheet.Name, stats);
-
-        player.SetCurrency(creationSheet.Currency);
-
-        var inventory = CreateInventory(creationSheet);
-        player.AddInventory(inventory);
-
-        var equipped = CreateEquipped(creationSheet);
-        player.AddEquipped(equipped);
-
-        return player;
-    }
-
-    public Creature Create(CreatureSheet creationSheet)
-    {
-        var stats = CreateCharacterStats(creationSheet);
-
-        var creature = new Creature(creationSheet.Name, stats);
-
-        creature.AddLoot(creationSheet.LootAmount);
-        creature.SetExperiencePoints(creationSheet.ExperiencePoints);
-        creature.SetLevel(creationSheet.Level);
-
-        var inventory = CreateInventory(creationSheet);
-        creature.AddInventory(inventory);
-
-        var equipped = CreateEquipped(creationSheet);
-        creature.AddEquipped(equipped);
-
-        return creature;
-    }
-
-    private static CharacterStats CreateCharacterStats(CharacterSheet creationSheet)
+    protected static CharacterStats CreateCharacterStats(CharacterSheet creationSheet)
     {
         var stats = new CharacterStats(
             creationSheet.Armor,
@@ -56,7 +21,7 @@ public class CharacterFactory
         return stats;
     }
 
-    private static Equipped CreateEquipped(CharacterSheet creationSheet)
+    protected static Equipped CreateEquipped(CharacterSheet creationSheet)
     {
         List<Armor> armors = [];
         List<Weapon> weapons = [];
@@ -86,7 +51,7 @@ public class CharacterFactory
         return equipped;
     }
 
-    private static Inventory CreateInventory(CharacterSheet creationSheet)
+    protected static Inventory CreateInventory(CharacterSheet creationSheet)
     {
         var inventory = new Inventory(creationSheet.MaxInventorySlots);
 

@@ -2,9 +2,10 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-namespace GameEngine.Compendium;
+namespace GameEngine.Compendium.Codex;
 
-public class PlayerSheet(string name) : CharacterSheet(name)
+public enum EquipmentType
 {
-    public int Currency { get; set; }
+    Armor,
+    Weapon
 }

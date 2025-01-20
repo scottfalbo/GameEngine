@@ -11,15 +11,17 @@ namespace GameEngineTests;
 [TestClass]
 public class CharacterFactoryTests
 {
-    private readonly CharacterFactory _characterFactory;
     private readonly CharacterSheetBuilder _characterSheetBuilder;
+    private readonly CreatureFactory _creatureFactory;
     private readonly EquipmentBuilder _equipmentBuilder;
     private readonly ItemBuilder _itemBuilder;
+    private readonly PlayerFactory _playerFactory;
 
     public CharacterFactoryTests()
     {
         _characterSheetBuilder = new CharacterSheetBuilder();
-        _characterFactory = new CharacterFactory();
+        _creatureFactory = new CreatureFactory();
+        _playerFactory = new PlayerFactory();
         _equipmentBuilder = new EquipmentBuilder();
         _itemBuilder = new ItemBuilder();
     }
@@ -31,7 +33,7 @@ public class CharacterFactoryTests
         var creatureSheet = _characterSheetBuilder.BuildCreatureSheet();
 
         // Act
-        var creature = _characterFactory.Create(creatureSheet);
+        var creature = _creatureFactory.Create(creatureSheet);
 
         // Assert
         Assert.IsInstanceOfType(creature, typeof(Creature));
@@ -58,7 +60,7 @@ public class CharacterFactoryTests
         var playerSheet = _characterSheetBuilder.BuildPlayerSheet();
 
         // Act
-        var player = _characterFactory.Create(playerSheet);
+        var player = _playerFactory.Create(playerSheet);
 
         // Assert
         Assert.IsInstanceOfType(player, typeof(Player));
@@ -89,7 +91,7 @@ public class CharacterFactoryTests
         playerSheet.Equipment.Add(weapon);
 
         // Act
-        var player = _characterFactory.Create(playerSheet);
+        var player = _playerFactory.Create(playerSheet);
 
         var equippedArmor = player.Equipped!.GetArmor();
         var equippedWeapon = player.Equipped!.GetWeapons();
@@ -113,7 +115,7 @@ public class CharacterFactoryTests
         playerSheet.Items.Add((potion, 1));
 
         // Act
-        var player = _characterFactory.Create(playerSheet);
+        var player = _playerFactory.Create(playerSheet);
 
         var inventory = player.Inventory!.GetInventory();
 
@@ -137,7 +139,7 @@ public class CharacterFactoryTests
         playerSheet.Items.Add((armor, 1));
 
         // Act
-        var player = _characterFactory.Create(playerSheet);
+        var player = _playerFactory.Create(playerSheet);
 
         var inventory = player.Inventory!.GetInventory();
 

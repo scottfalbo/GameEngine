@@ -8,6 +8,8 @@ public abstract class Equipment(string name) : Item(name)
 {
     public int Armor { get; private set; } = 0;
 
+    public int Damage { get; private set; } = 0;
+
     public int Dexterity { get; private set; } = 0;
 
     public int Health { get; private set; } = 0;
@@ -19,6 +21,11 @@ public abstract class Equipment(string name) : Item(name)
     public void SetArmor(int value)
     {
         Armor = value;
+    }
+
+    public void SetDamage(int value)
+    {
+        Damage = value;
     }
 
     public void SetDexterity(int value)
