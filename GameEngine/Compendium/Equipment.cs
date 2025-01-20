@@ -2,15 +2,19 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
+using GameEngine.Compendium.Codex;
+
 namespace GameEngine.Compendium;
 
-public abstract class Equipment(string name) : Item(name)
+public abstract class Equipment(string name, EquipmentType equipmentType) : Item(name, ItemType.Equipment)
 {
     public int Armor { get; private set; } = 0;
 
     public int Damage { get; private set; } = 0;
 
     public int Dexterity { get; private set; } = 0;
+
+    public EquipmentType EquipmentType { get; private set; } = equipmentType;
 
     public int Health { get; private set; } = 0;
 

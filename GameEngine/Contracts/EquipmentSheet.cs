@@ -9,5 +9,5 @@ public class EquipmentSheet(string name, EquipmentType type) : BaseSheet(name)
 {
     public int Damage { get; set; } = 0;
 
-    public EquipmentType equipmentType { get; set; } = type;
+    public EquipmentType Type { get; set; } = type;
 }

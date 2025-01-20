@@ -2,11 +2,13 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
+using GameEngine.Compendium.Codex;
+
 namespace GameEngine.Compendium;
 
 public class Potion : Item
 {
-    public Potion(string name) : base(name)
+    public Potion(string name) : base(name, ItemType.Potion)
     {
         SetIsStackable(true);
     }

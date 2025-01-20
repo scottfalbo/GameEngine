@@ -6,5 +6,6 @@ namespace GameEngine.Compendium.Codex;
 
 public enum ItemType
 {
+    Equipment,
     Potion
 }
