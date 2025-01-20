@@ -23,7 +23,7 @@ public class Inventory
         }
     }
 
-    public bool AddItem(int slot, ItemBase item, int quantity)
+    public bool AddItem(int slot, Item item, int quantity)
     {
         if (!IsInRange(slot))
         {

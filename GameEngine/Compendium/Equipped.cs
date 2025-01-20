@@ -142,7 +142,7 @@ public class Equipped
         _weapons[slot] = null;
     }
 
-    private void AdjustEquippedStats(EquipmentBase equipment, bool unequip = false)
+    private void AdjustEquippedStats(Equipment equipment, bool unequip = false)
     {
         var armor = unequip ? _equippedStats.Armor - equipment.Armor : _equippedStats.Armor + equipment.Armor;
         var dexterity = unequip ? _equippedStats.Dexterity - equipment.Dexterity : _equippedStats.Dexterity + equipment.Dexterity;

@@ -4,7 +4,7 @@
 
 namespace GameEngine.Compendium;
 
-public class CreatureCreationSheet(string name) : CharacterCreationSheet(name)
+public class CreatureSheet(string name) : CharacterSheet(name)
 {
     public int ExperiencePoints { get; set; }
 

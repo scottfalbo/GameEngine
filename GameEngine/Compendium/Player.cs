@@ -4,7 +4,7 @@
 
 namespace GameEngine.Compendium;
 
-public class Player(string name, CharacterStats stats) : CharacterBase(name, stats)
+public class Player(string name, CharacterStats stats) : Character(name, stats)
 {
     public int Currency { get; private set; } = 0;
 

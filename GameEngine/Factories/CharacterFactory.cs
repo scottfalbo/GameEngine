@@ -8,7 +8,7 @@ namespace GameEngine.Factories;
 
 public class CharacterFactory
 {
-    public Player Create(PlayerCreationSheet creationSheet)
+    public Player Create(PlayerSheet creationSheet)
     {
         var stats = CreateCharacterStats(creationSheet);
 
@@ -25,7 +25,7 @@ public class CharacterFactory
         return player;
     }
 
-    public Creature Create(CreatureCreationSheet creationSheet)
+    public Creature Create(CreatureSheet creationSheet)
     {
         var stats = CreateCharacterStats(creationSheet);
 
@@ -44,7 +44,7 @@ public class CharacterFactory
         return creature;
     }
 
-    private static CharacterStats CreateCharacterStats(CharacterCreationSheet creationSheet)
+    private static CharacterStats CreateCharacterStats(CharacterSheet creationSheet)
     {
         var stats = new CharacterStats(
             creationSheet.Armor,
@@ -56,7 +56,7 @@ public class CharacterFactory
         return stats;
     }
 
-    private static Equipped CreateEquipped(CharacterCreationSheet creationSheet)
+    private static Equipped CreateEquipped(CharacterSheet creationSheet)
     {
         List<Armor> armors = [];
         List<Weapon> weapons = [];
@@ -86,7 +86,7 @@ public class CharacterFactory
         return equipped;
     }
 
-    private static Inventory CreateInventory(CharacterCreationSheet creationSheet)
+    private static Inventory CreateInventory(CharacterSheet creationSheet)
     {
         var inventory = new Inventory(creationSheet.MaxInventorySlots);
 

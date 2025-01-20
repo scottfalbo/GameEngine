@@ -4,7 +4,7 @@
 
 namespace GameEngine.Compendium;
 
-public class Potion : ItemBase
+public class Potion : Item
 {
     public Potion(string name) : base(name)
     {

@@ -4,7 +4,7 @@
 
 namespace GameEngine.Compendium;
 
-public abstract class EquipmentBase(string name) : ItemBase(name)
+public abstract class Equipment(string name) : Item(name)
 {
     public int Armor { get; private set; } = 0;
 

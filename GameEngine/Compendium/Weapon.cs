@@ -4,7 +4,7 @@
 
 namespace GameEngine.Compendium;
 
-public class Weapon(string name, int damage) : EquipmentBase(name)
+public class Weapon(string name, int damage) : Equipment(name)
 {
     public int Damage { get; private set; } = damage;
 }

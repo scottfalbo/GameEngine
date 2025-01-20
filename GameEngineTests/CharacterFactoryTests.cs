@@ -12,13 +12,13 @@ namespace GameEngineTests;
 public class CharacterFactoryTests
 {
     private readonly CharacterFactory _characterFactory;
-    private readonly CharacterCreationSheetBuilder _characterSheetBuilder;
+    private readonly CharacterSheetBuilder _characterSheetBuilder;
     private readonly EquipmentBuilder _equipmentBuilder;
     private readonly ItemBuilder _itemBuilder;
 
     public CharacterFactoryTests()
     {
-        _characterSheetBuilder = new CharacterCreationSheetBuilder();
+        _characterSheetBuilder = new CharacterSheetBuilder();
         _characterFactory = new CharacterFactory();
         _equipmentBuilder = new EquipmentBuilder();
         _itemBuilder = new ItemBuilder();
@@ -28,68 +28,68 @@ public class CharacterFactoryTests
     public void Create_CreatureCreationSheet_CreatesCreature()
     {
         // Arrange
-        var creatureCreatureSheet = _characterSheetBuilder.BuildCreatureCreationSheet();
+        var creatureSheet = _characterSheetBuilder.BuildCreatureSheet();
 
         // Act
-        var creature = _characterFactory.Create(creatureCreatureSheet);
+        var creature = _characterFactory.Create(creatureSheet);
 
         // Assert
         Assert.IsInstanceOfType(creature, typeof(Creature));
 
-        Assert.AreEqual(creatureCreatureSheet.Name, creature.Name);
+        Assert.AreEqual(creatureSheet.Name, creature.Name);
 
-        Assert.AreEqual(creatureCreatureSheet.ExperiencePoints, creature.ExperiencePoints);
-        Assert.AreEqual(creatureCreatureSheet.LootAmount, creature.LootAmount);
-        Assert.AreEqual(creatureCreatureSheet.Level, creature.Level);
+        Assert.AreEqual(creatureSheet.ExperiencePoints, creature.ExperiencePoints);
+        Assert.AreEqual(creatureSheet.LootAmount, creature.LootAmount);
+        Assert.AreEqual(creatureSheet.Level, creature.Level);
 
-        Assert.AreEqual(creatureCreatureSheet.Armor, creature.Stats.Armor);
-        Assert.AreEqual(creatureCreatureSheet.Dexterity, creature.Stats.Dexterity);
-        Assert.AreEqual(creatureCreatureSheet.Health, creature.Stats.Health);
-        Assert.AreEqual(creatureCreatureSheet.Intelligence, creature.Stats.Intelligence);
-        Assert.AreEqual(creatureCreatureSheet.Strength, creature.Stats.Strength);
+        Assert.AreEqual(creatureSheet.Armor, creature.Stats.Armor);
+        Assert.AreEqual(creatureSheet.Dexterity, creature.Stats.Dexterity);
+        Assert.AreEqual(creatureSheet.Health, creature.Stats.Health);
+        Assert.AreEqual(creatureSheet.Intelligence, creature.Stats.Intelligence);
+        Assert.AreEqual(creatureSheet.Strength, creature.Stats.Strength);
 
-        Assert.AreEqual(creatureCreatureSheet.MaxInventorySlots, creature.Inventory!.MaxSlots);
+        Assert.AreEqual(creatureSheet.MaxInventorySlots, creature.Inventory!.MaxSlots);
     }
 
     [TestMethod]
     public void Create_PlayerCreationSheet_CreatesPlayer()
     {
         // Arrange
-        var playerCreationSheet = _characterSheetBuilder.BuildPlayerCreationSheet();
+        var playerSheet = _characterSheetBuilder.BuildPlayerSheet();
 
         // Act
-        var player = _characterFactory.Create(playerCreationSheet);
+        var player = _characterFactory.Create(playerSheet);
 
         // Assert
         Assert.IsInstanceOfType(player, typeof(Player));
 
-        Assert.AreEqual(playerCreationSheet.Name, player.Name);
+        Assert.AreEqual(playerSheet.Name, player.Name);
 
-        Assert.AreEqual(playerCreationSheet.Currency, player.Currency);
+        Assert.AreEqual(playerSheet.Currency, player.Currency);
 
-        Assert.AreEqual(playerCreationSheet.Armor, player.Stats.Armor);
-        Assert.AreEqual(playerCreationSheet.Dexterity, player.Stats.Dexterity);
-        Assert.AreEqual(playerCreationSheet.Health, player.Stats.Health);
-        Assert.AreEqual(playerCreationSheet.Intelligence, player.Stats.Intelligence);
-        Assert.AreEqual(playerCreationSheet.Strength, player.Stats.Strength);
+        Assert.AreEqual(playerSheet.Armor, player.Stats.Armor);
+        Assert.AreEqual(playerSheet.Dexterity, player.Stats.Dexterity);
+        Assert.AreEqual(playerSheet.Health, player.Stats.Health);
+        Assert.AreEqual(playerSheet.Intelligence, player.Stats.Intelligence);
+        Assert.AreEqual(playerSheet.Strength, player.Stats.Strength);
 
-        Assert.AreEqual(playerCreationSheet.MaxInventorySlots, player.Inventory!.MaxSlots);
+        Assert.AreEqual(playerSheet.MaxInventorySlots, player.Inventory!.MaxSlots);
     }
 
     [TestMethod]
     public void Create_WithEquipment_CreatesEquipped()
     {
         // Arrange
-        var playerCreationSheet = _characterSheetBuilder.BuildPlayerCreationSheet();
+        var playerSheet = _characterSheetBuilder.BuildPlayerSheet();
 
         var armor = _equipmentBuilder.BuildArmor();
         var weapon = _equipmentBuilder.BuildWeapon();
 
-        playerCreationSheet.Equipment.Add(armor);
-        playerCreationSheet.Equipment.Add(weapon);
+        playerSheet.Equipment.Add(armor);
+        playerSheet.Equipment.Add(weapon);
 
         // Act
-        var player = _characterFactory.Create(playerCreationSheet);
+        var player = _characterFactory.Create(playerSheet);
 
         var equippedArmor = player.Equipped!.GetArmor();
         var equippedWeapon = player.Equipped!.GetWeapons();
@@ -106,19 +106,19 @@ public class CharacterFactoryTests
     public void Create_WithItems_CreatesInventory()
     {
         // Arrange
-        var playerCreationSheet = _characterSheetBuilder.BuildPlayerCreationSheet();
+        var playerSheet = _characterSheetBuilder.BuildPlayerSheet();
 
         var potion = _itemBuilder.BuildPotion();
 
-        playerCreationSheet.Items.Add((potion, 1));
+        playerSheet.Items.Add((potion, 1));
 
         // Act
-        var player = _characterFactory.Create(playerCreationSheet);
+        var player = _characterFactory.Create(playerSheet);
 
         var inventory = player.Inventory!.GetInventory();
 
         // Assert
-        Assert.AreEqual(playerCreationSheet.MaxInventorySlots, inventory.Count);
+        Assert.AreEqual(playerSheet.MaxInventorySlots, inventory.Count);
         Assert.AreEqual(potion, inventory[0].Item);
     }
 
@@ -126,23 +126,23 @@ public class CharacterFactoryTests
     public void Create_WithItems_CreatesInventoryWithMultipleItems()
     {
         // Arrange
-        var playerCreationSheet = _characterSheetBuilder.BuildPlayerCreationSheet();
+        var playerSheet = _characterSheetBuilder.BuildPlayerSheet();
 
         var potion = _itemBuilder.BuildPotion();
         var weapon = _equipmentBuilder.BuildWeapon();
         var armor = _equipmentBuilder.BuildArmor();
 
-        playerCreationSheet.Items.Add((potion, 10));
-        playerCreationSheet.Items.Add((weapon, 1));
-        playerCreationSheet.Items.Add((armor, 1));
+        playerSheet.Items.Add((potion, 10));
+        playerSheet.Items.Add((weapon, 1));
+        playerSheet.Items.Add((armor, 1));
 
         // Act
-        var player = _characterFactory.Create(playerCreationSheet);
+        var player = _characterFactory.Create(playerSheet);
 
         var inventory = player.Inventory!.GetInventory();
 
         // Assert
-        Assert.AreEqual(playerCreationSheet.MaxInventorySlots, inventory.Count);
+        Assert.AreEqual(playerSheet.MaxInventorySlots, inventory.Count);
         Assert.AreEqual(potion, inventory[0].Item);
         Assert.AreEqual(expected: 10, inventory[0].Quantity);
         Assert.AreEqual(weapon, inventory[1].Item);

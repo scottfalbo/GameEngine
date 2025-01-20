@@ -4,7 +4,7 @@
 
 namespace GameEngine.Compendium;
 
-public abstract class CharacterBase(string name, CharacterStats stats)
+public abstract class Character(string name, CharacterStats stats)
 {
     public Equipped? Equipped { get; private set; }
 

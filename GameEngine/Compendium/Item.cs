@@ -4,7 +4,7 @@
 
 namespace GameEngine.Compendium;
 
-public abstract class ItemBase(string name)
+public abstract class Item(string name)
 {
     public bool IsStackable { get; private set; } = false;
 
