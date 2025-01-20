@@ -2,7 +2,7 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-using GameEngine.Compendium;
+using GameEngine.Compendium.Abstracts;
 using GameEngine.Contracts;
 
 namespace GameEngineTests.Builders;

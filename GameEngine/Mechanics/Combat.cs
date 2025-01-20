@@ -3,6 +3,7 @@
 // ------------------------------------------
 
 using GameEngine.Compendium;
+using GameEngine.Compendium.Abstracts;
 
 namespace GameEngine.Mechanics;
 

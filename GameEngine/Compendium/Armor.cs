@@ -2,6 +2,8 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
+using GameEngine.Compendium.Abstracts;
+
 namespace GameEngine.Compendium;
 
 public class Armor : Equipment

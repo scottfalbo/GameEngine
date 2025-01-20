@@ -10,6 +10,8 @@ public class BaseSheet(string name)
 
     public int Dexterity { get; set; }
 
+    public string? FlavorText { get; set; }
+
     public int Health { get; set; }
 
     public int Intelligence { get; set; }

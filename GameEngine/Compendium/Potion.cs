@@ -2,16 +2,16 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
+using GameEngine.Compendium.Abstracts;
 using GameEngine.Compendium.Codex;
 
 namespace GameEngine.Compendium;
 
-public class Potion : Item
+public class Potion : Consumable
 {
-    public Potion(string name, int quantity = 1) : base(name, ItemType.Potion)
+    public Potion(string name, int quantity = 1) : base(name, ConsumableType.Potion)
     {
         SetQuantity(quantity);
-        SetIsConsumable(true);
         SetIsStackable(true);
     }
 }

@@ -4,11 +4,11 @@
 
 using GameEngine.Compendium.Codex;
 
-namespace GameEngine.Compendium;
+namespace GameEngine.Compendium.Abstracts;
 
 public abstract class Item(string name, ItemType type)
 {
-    public bool IsConsumable { get; private set; } = false;
+    public string? FlavorText { get; private set; }
 
     public bool IsStackable { get; private set; } = false;
 
@@ -20,9 +20,9 @@ public abstract class Item(string name, ItemType type)
 
     public int Quantity { get; private set; } = 1;
 
-    public void SetIsConsumable(bool value)
+    public void SetFlavorText(string value)
     {
-        IsConsumable = value;
+        FlavorText = value;
     }
 
     public void SetIsStackable(bool value)

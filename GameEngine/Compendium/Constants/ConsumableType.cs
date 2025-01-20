@@ -4,8 +4,9 @@
 
 namespace GameEngine.Compendium.Codex;
 
-public enum ItemType
+public enum ConsumableType
 {
-    Equipment,
-    Potion
+    Potion,
+    Food,
+    Drink
 }

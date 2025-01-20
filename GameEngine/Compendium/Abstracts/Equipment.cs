@@ -4,7 +4,7 @@
 
 using GameEngine.Compendium.Codex;
 
-namespace GameEngine.Compendium;
+namespace GameEngine.Compendium.Abstracts;
 
 public abstract class Equipment(string name, EquipmentType equipmentType) : Item(name, ItemType.Equipment)
 {
