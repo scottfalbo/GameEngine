@@ -11,9 +11,7 @@ public abstract class Consumable(
     int adjustmentAmount,
     ConsumableType consumableType,
     Stat targetStat)
-    : Item(
-        name,
-        ItemType.Consumable)
+    : Item(name, ItemType.Consumable)
 {
     public int AdjustmentAmount { get; private set; } = adjustmentAmount;
 

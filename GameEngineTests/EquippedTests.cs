@@ -3,6 +3,7 @@
 // ------------------------------------------
 
 using GameEngine.Compendium;
+using GameEngine.Compendium.Containers;
 
 namespace GameEngineTests;
 

@@ -2,6 +2,8 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
+using GameEngine.Compendium.Containers;
+
 namespace GameEngine.Compendium.Abstracts;
 
 public abstract class Character(string name, CharacterStats stats)

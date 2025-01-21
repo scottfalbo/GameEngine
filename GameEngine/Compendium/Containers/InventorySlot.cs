@@ -4,7 +4,7 @@
 
 using GameEngine.Compendium.Abstracts;
 
-namespace GameEngine.Compendium;
+namespace GameEngine.Compendium.Containers;
 
 public class InventorySlot
 {
