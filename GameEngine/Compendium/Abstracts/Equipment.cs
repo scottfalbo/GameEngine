@@ -6,7 +6,8 @@ using GameEngine.Compendium.Constants;
 
 namespace GameEngine.Compendium.Abstracts;
 
-public abstract class Equipment(string name, EquipmentType equipmentType) : Item(name, ItemType.Equipment)
+public abstract class Equipment(string name, EquipmentType equipmentType)
+    : Item(name, ItemType.Equipment)
 {
     public int Armor { get; private set; } = 0;
 

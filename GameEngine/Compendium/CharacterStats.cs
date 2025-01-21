@@ -4,7 +4,12 @@
 
 namespace GameEngine.Compendium;
 
-public class CharacterStats(int armor, int dexterity, int health, int intelligence, int strength)
+public class CharacterStats(
+    int armor,
+    int dexterity,
+    int health,
+    int intelligence,
+    int strength)
 {
     public int Armor { get; private set; } = armor;
 

@@ -6,7 +6,8 @@ using GameEngine.Compendium.Abstracts;
 
 namespace GameEngine.Compendium;
 
-public class Creature(string name, CharacterStats stats) : Character(name, stats)
+public class Creature(string name, CharacterStats stats)
+    : Character(name, stats)
 {
     public int ExperiencePoints { get; private set; } = 0;
 

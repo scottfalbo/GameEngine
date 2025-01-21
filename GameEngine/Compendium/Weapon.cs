@@ -9,7 +9,8 @@ namespace GameEngine.Compendium;
 
 public class Weapon : Equipment
 {
-    public Weapon(string name, int damage) : base(name, EquipmentType.Weapon)
+    public Weapon(string name, int damage)
+        : base(name, EquipmentType.Weapon)
     {
         SetDamage(damage);
     }

@@ -6,6 +6,7 @@ using GameEngine.Compendium.Abstracts;
 
 namespace GameEngine.Compendium;
 
-public class NPC(string name, CharacterStats stats) : Character(name, stats)
+public class NPC(string name, CharacterStats stats)
+    : Character(name, stats)
 {
 }
