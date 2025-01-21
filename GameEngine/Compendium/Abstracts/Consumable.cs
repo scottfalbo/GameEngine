@@ -13,10 +13,12 @@ public abstract class Consumable(string name, int adjustmentAmount, ConsumableTy
 
     public ConsumableType ConsumableType { get; private set; } = consumableType;
 
+    public bool IsStaticAdjustment { get; private set; } = false;
+
     public Stat TargetStat { get; private set; } = targetStat;
 
-    public void SetTargetStat(Stat value)
+    public void SetIsStaticAdjustment(bool value)
     {
-        TargetStat = value;
+        IsStaticAdjustment = value;
     }
 }
