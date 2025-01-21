@@ -6,6 +6,7 @@ namespace GameEngine.Compendium.Constants;
 
 public enum ItemType
 {
+    Consumable,
     Equipment,
-    Consumable
+    Quest
 }

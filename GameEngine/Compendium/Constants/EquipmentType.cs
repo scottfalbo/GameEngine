@@ -7,5 +7,6 @@ namespace GameEngine.Compendium.Constants;
 public enum EquipmentType
 {
     Armor,
+    Jewelry,
     Weapon
 }
