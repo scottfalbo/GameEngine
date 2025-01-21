@@ -3,7 +3,7 @@
 // ------------------------------------------
 
 using GameEngine.Compendium.Abstracts;
-using GameEngine.Compendium.Codex;
+using GameEngine.Compendium.Constants;
 
 namespace GameEngine.Compendium;
 

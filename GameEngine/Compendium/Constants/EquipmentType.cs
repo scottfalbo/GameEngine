@@ -2,7 +2,7 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-namespace GameEngine.Compendium.Codex;
+namespace GameEngine.Compendium.Constants;
 
 public enum EquipmentType
 {

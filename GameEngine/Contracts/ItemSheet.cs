@@ -2,7 +2,7 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-using GameEngine.Compendium.Codex;
+using GameEngine.Compendium.Constants;
 
 namespace GameEngine.Contracts;
 
