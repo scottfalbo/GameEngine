@@ -4,8 +4,6 @@
 
 namespace GameEngine.Compendium.Constants;
 
-public enum ConsumableType
+public enum CraftingType
 {
-    Edible,
-    Potion
 }

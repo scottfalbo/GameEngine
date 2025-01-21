@@ -6,11 +6,7 @@ using GameEngine.Compendium.Constants;
 
 namespace GameEngine.Compendium.Abstracts;
 
-public abstract class Consumable(
-    string name,
-    int adjustmentAmount,
-    ConsumableType consumableType,
-    Stat targetStat)
+public abstract class Consumable(string name, int adjustmentAmount, ConsumableType consumableType, Stat targetStat)
     : Item(name, ItemType.Consumable)
 {
     public int AdjustmentAmount { get; private set; } = adjustmentAmount;

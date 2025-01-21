@@ -7,10 +7,10 @@ using GameEngine.Compendium.Constants;
 
 namespace GameEngine.Compendium;
 
-public class Potion : Consumable
+public class Edible : Consumable
 {
-    public Potion(string name, int adjustmentAmount, Stat targetStat, int quantity = 1)
-        : base(name, adjustmentAmount, ConsumableType.Potion, targetStat)
+    public Edible(string name, int adjustmentAmount, Stat targetStat, int quantity = 1)
+        : base(name, adjustmentAmount, ConsumableType.Edible, targetStat)
     {
         SetQuantity(quantity);
         SetIsStackable(true);

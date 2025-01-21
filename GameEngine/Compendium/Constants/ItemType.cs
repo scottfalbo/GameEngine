@@ -8,5 +8,7 @@ public enum ItemType
 {
     Consumable,
     Equipment,
+    Material,
+    Miscellaneous,
     Quest
 }
