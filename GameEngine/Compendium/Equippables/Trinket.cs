@@ -5,13 +5,8 @@
 using GameEngine.Compendium.Abstracts;
 using GameEngine.Compendium.Constants;
 
-namespace GameEngine.Compendium.Equipables;
+namespace GameEngine.Compendium.Equippables;
 
-public class Weapon : Equipable
+public class Trinket(string name) : Equippable(name, EquippableType.Trinkets)
 {
-    public Weapon(string name, int damage)
-        : base(name, EquipmentType.Weapon)
-    {
-        SetDamage(damage);
-    }
 }

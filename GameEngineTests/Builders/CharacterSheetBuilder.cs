@@ -12,7 +12,7 @@ internal class CharacterSheetBuilder
     private int _armor = 10;
     private int _currency = 50;
     private int _dexterity = 5;
-    private List<Equipable> _equipment = new();
+    private List<Equippable> _equipment = new();
     private int _experiencePoints = 10;
     private int _health = 20;
     private int _intelligence = 5;

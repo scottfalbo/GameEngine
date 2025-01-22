@@ -2,7 +2,7 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-using GameEngine.Compendium.Equipables;
+using GameEngine.Compendium.Equippables;
 
 namespace GameEngineTests.Builders;
 

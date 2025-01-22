@@ -4,7 +4,7 @@
 
 using GameEngine.Compendium.Characters;
 using GameEngine.Compendium.Containers;
-using GameEngine.Compendium.Equipables;
+using GameEngine.Compendium.Equippables;
 using GameEngine.Contracts;
 
 namespace GameEngine.Factories;

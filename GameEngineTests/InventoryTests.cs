@@ -3,7 +3,7 @@
 // ------------------------------------------
 
 using GameEngine.Compendium.Containers;
-using GameEngine.Compendium.Equipables;
+using GameEngine.Compendium.Equippables;
 using GameEngine.Compendium.Items;
 using GameEngineTests.Builders;
 

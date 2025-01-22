@@ -4,9 +4,9 @@
 
 namespace GameEngine.Compendium.Constants;
 
-public enum EquipmentType
+public enum EquippableType
 {
     Armor,
-    Jewelry,
+    Trinkets,
     Weapon
 }

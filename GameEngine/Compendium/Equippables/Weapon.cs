@@ -5,13 +5,13 @@
 using GameEngine.Compendium.Abstracts;
 using GameEngine.Compendium.Constants;
 
-namespace GameEngine.Compendium.Equipables;
+namespace GameEngine.Compendium.Equippables;
 
-public class Armor : Equipable
+public class Weapon : Equippable
 {
-    public Armor(string name, int armor)
-        : base(name, EquipmentType.Armor)
+    public Weapon(string name, int damage)
+        : base(name, EquippableType.Weapon)
     {
-        SetArmor(armor);
+        SetDamage(damage);
     }
 }
