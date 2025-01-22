@@ -142,7 +142,7 @@ public class Equipped
         }
 
         var armor = _armor[slot];
-        AdjustEquippedStats(armor!, true);
+        AdjustEquippedStats(armor!, unequip: true);
 
         _armor[slot] = null;
     }
@@ -155,7 +155,7 @@ public class Equipped
         }
 
         var weapon = _weapons[slot];
-        AdjustEquippedStats(weapon!, true);
+        AdjustEquippedStats(weapon!, unequip: true);
 
         _weapons[slot] = null;
     }

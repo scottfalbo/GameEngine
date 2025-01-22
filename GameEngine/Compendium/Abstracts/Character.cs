@@ -11,6 +11,8 @@ public abstract class Character(string name, CharacterStats stats)
 {
     public Equipped? Equipped { get; private set; }
 
+    public int HitPoints { get; private set; } = stats.Health;
+
     public Inventory? Inventory { get; private set; }
 
     public int Level { get; private set; } = 1;
@@ -34,6 +36,11 @@ public abstract class Character(string name, CharacterStats stats)
         Level += amount;
     }
 
+    public void DecrementHitPoints(int amount)
+    {
+        HitPoints -= amount;
+    }
+
     public CharacterStats GetAdjustedStats()
     {
         var equippedStats = Equipped!.EquippedStats;
@@ -46,6 +53,19 @@ public abstract class Character(string name, CharacterStats stats)
             Stats.Strength + equippedStats.Strength);
 
         return adjustedStats;
+    }
+
+    public void IncrementHitPoints(int amount)
+    {
+        var maxHitPoints = GetAdjustedStats().Health;
+
+        if (HitPoints + amount > maxHitPoints)
+        {
+            HitPoints = maxHitPoints;
+            return;
+        }
+
+        HitPoints += amount;
     }
 
     public void SetLevel(int amount)
