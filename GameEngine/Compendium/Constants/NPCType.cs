@@ -6,6 +6,9 @@ namespace GameEngine.Compendium.Constants;
 
 public enum NPCType
 {
-    Merchant,
-    QuestGiver
+    Extra,
+    Mystic,
+    QuestGiver,
+    Trainer,
+    Vendor
 }
