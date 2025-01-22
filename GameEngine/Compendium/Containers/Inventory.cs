@@ -27,12 +27,24 @@ public class Inventory
 
     public bool AddItem(int slot, Item item)
     {
-        if (!IsInRange(slot))
+        if (!IsInRange(slot) || IsInventoryFull())
         {
             return false;
         }
 
         return _slots[slot].AddItem(item);
+    }
+
+    public bool AddItem(Item item)
+    {
+        if (IsInventoryFull())
+        {
+            return false;
+        }
+
+        var firstOpenSlot = _slots.FirstOrDefault(x => !x.Value.HasItem).Key;
+
+        return _slots[firstOpenSlot].AddItem(item);
     }
 
     public void DecreaseMaxSlots(int amount)
@@ -80,6 +92,19 @@ public class Inventory
         }
 
         return _slots[slot].IncreaseQuantity(amount);
+    }
+
+    public bool IsInventoryFull()
+    {
+        foreach (var slot in _slots)
+        {
+            if (!slot.Value.HasItem)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public bool MoveItem(int source, int target)
