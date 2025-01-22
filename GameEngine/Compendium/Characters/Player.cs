@@ -4,7 +4,7 @@
 
 using GameEngine.Compendium.Abstracts;
 
-namespace GameEngine.Compendium;
+namespace GameEngine.Compendium.Characters;
 
 public class Player(string name, CharacterStats stats)
     : Character(name, stats)

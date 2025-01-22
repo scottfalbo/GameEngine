@@ -5,7 +5,7 @@
 using GameEngine.Compendium.Abstracts;
 using GameEngine.Compendium.Constants;
 
-namespace GameEngine.Compendium;
+namespace GameEngine.Compendium.Items;
 
 public class Crafting(string name, CraftingType craftingType) : Material(name, MaterialType.Crafting)
 {

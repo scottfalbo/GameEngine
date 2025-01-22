@@ -2,8 +2,8 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-using GameEngine.Compendium;
 using GameEngine.Compendium.Constants;
+using GameEngine.Compendium.Items;
 
 namespace GameEngineTests.Builders;
 

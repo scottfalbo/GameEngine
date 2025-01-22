@@ -3,12 +3,15 @@
 // ------------------------------------------
 
 using GameEngine.Compendium.Abstracts;
+using GameEngine.Compendium.Constants;
 
-namespace GameEngine.Compendium;
+namespace GameEngine.Compendium.Characters;
 
-public class Creature(string name, CharacterStats stats)
+public class Creature(string name, CharacterStats stats, CreatureType creatureType)
     : Character(name, stats)
 {
+    public CreatureType CreatureType { get; private set; } = creatureType;
+
     public int ExperiencePoints { get; private set; } = 0;
 
     public int LootAmount { get; private set; } = 0;

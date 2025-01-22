@@ -9,7 +9,7 @@ namespace GameEngine.Factories;
 
 public abstract class EquipmentFactory
 {
-    protected void SetStats(Equipment equipment, EquipmentSheet creationSheet)
+    protected void SetStats(Equipable equipment, EquipmentSheet creationSheet)
     {
         equipment.SetArmor(creationSheet.Armor);
         equipment.SetDamage(creationSheet.Damage);

@@ -2,7 +2,7 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-using GameEngine.Compendium;
+using GameEngine.Compendium.Characters;
 using GameEngine.Contracts;
 
 namespace GameEngine.Factories;
@@ -13,7 +13,7 @@ public class CreatureFactory : CharacterFactory
     {
         var stats = CreateCharacterStats(creationSheet);
 
-        var creature = new Creature(creationSheet.Name, stats);
+        var creature = new Creature(creationSheet.Name, stats, creationSheet.CreatureType);
 
         creature.AddLoot(creationSheet.LootAmount);
         creature.SetExperiencePoints(creationSheet.ExperiencePoints);

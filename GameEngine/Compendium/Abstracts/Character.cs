@@ -2,6 +2,7 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
+using GameEngine.Compendium.Characters;
 using GameEngine.Compendium.Containers;
 
 namespace GameEngine.Compendium.Abstracts;

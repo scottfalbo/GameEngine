@@ -8,7 +8,7 @@ namespace GameEngine.Contracts;
 
 public abstract class CharacterSheet(string name) : BaseSheet(name)
 {
-    public List<Equipment> Equipment { get; set; } = [];
+    public List<Equipable> Equipment { get; set; } = [];
 
     public List<Item> Items { get; set; } = [];
 

@@ -5,8 +5,13 @@
 using GameEngine.Compendium.Abstracts;
 using GameEngine.Compendium.Constants;
 
-namespace GameEngine.Compendium;
+namespace GameEngine.Compendium.Equipables;
 
-public class Miscellaneous(string name) : Item(name, ItemType.Miscellaneous)
+public class Weapon : Equipable
 {
+    public Weapon(string name, int damage)
+        : base(name, EquipmentType.Weapon)
+    {
+        SetDamage(damage);
+    }
 }

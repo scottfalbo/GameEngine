@@ -2,7 +2,7 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-using GameEngine.Compendium;
+using GameEngine.Compendium.Characters;
 using GameEngine.Factories;
 using GameEngineTests.Builders;
 
