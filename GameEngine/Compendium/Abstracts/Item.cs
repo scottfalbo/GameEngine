@@ -18,7 +18,9 @@ public abstract class Item(string name, ItemType type)
 
     public int Quantity { get; private set; } = 1;
 
-    public int SellPrice { get; private set; } = 0;
+    public int VendorBuyPrice { get; private set; } = 0;
+
+    public int VendorSellPrice { get; private set; } = 0;
 
     public void SetFlavorText(string value)
     {
@@ -35,8 +37,13 @@ public abstract class Item(string name, ItemType type)
         Quantity = value;
     }
 
-    public void SetSellPrice(int value)
+    public void SetVendorBuyPrice(int value)
     {
-        SellPrice = value;
+        VendorBuyPrice = value;
+    }
+
+    public void SetVendorSellPrice(int value)
+    {
+        VendorSellPrice = value;
     }
 }

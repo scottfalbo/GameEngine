@@ -68,11 +68,34 @@ public class Shop(string name)
         return shopResponse;
     }
 
-    public ShopResponse PlayerSellsItem(Item item, Player player, int quantity = 1)
+    public ShopResponse PlayerSellsItem(int inventorySlot, Player player, int quantity = 1)
     {
-        var totalPrice = item.SellPrice * quantity;
+        var playerInventory = player.Inventory!.GetInventory();
+        var playerInventorySlot = playerInventory[inventorySlot];
+
+        var item = playerInventorySlot.Item;
+        var totalPrice = item!.VendorBuyPrice * quantity;
 
         var shopResponse = new ShopResponse(item.Name, quantity, totalPrice);
+
+        if (playerInventorySlot.Quantity < quantity)
+        {
+            shopResponse.SetIsSuccess(false);
+            shopResponse.SetMessage(ShopMessages.InsufficientQuantity);
+            return shopResponse;
+        }
+
+        playerInventorySlot.DecreaseQuantity(quantity);
+        player.AddCurrency(totalPrice);
+
+        if (_slots.TryGetValue(item.Name, out ShopSlot? value))
+        {
+            value.IncreaseQuantity(quantity);
+        }
+        else
+        {
+            AddItem(item, item.VendorSellPrice, quantity);
+        }
 
         return shopResponse;
     }
