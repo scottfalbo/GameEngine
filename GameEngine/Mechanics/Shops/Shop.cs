@@ -13,6 +13,8 @@ public class Shop(string name)
 
     public string Name { get; private set; } = name;
 
+    private decimal MarkupPercentage { get; set; } = 1m;
+
     public void AddItem(Item item, int price, int quantity)
     {
         var slot = new ShopSlot(item, price, quantity);
@@ -23,9 +25,9 @@ public class Shop(string name)
     {
         var itemSlot = _slots[itemName];
         var item = itemSlot.Item;
-        var totalCost = itemSlot.Price * quantity;
+        var totalPrice = itemSlot.Price * quantity;
 
-        var shopResponse = new ShopResponse(itemName, quantity, totalCost);
+        var shopResponse = new ShopResponse(itemName, quantity, totalPrice);
 
         if (itemSlot.Quantity < quantity)
         {
@@ -34,7 +36,7 @@ public class Shop(string name)
             return shopResponse;
         }
 
-        if (totalCost > player.Currency)
+        if (totalPrice > player.Currency)
         {
             shopResponse.SetIsSuccess(false);
             shopResponse.SetMessage(ShopMessages.InsufficientFunds);
@@ -52,11 +54,7 @@ public class Shop(string name)
 
         player.Inventory.AddItem(item);
 
-        player.RemoveCurrency(totalCost);
-
-        var message = $"{ShopMessages.PurchaseSuccess} of {quantity} {item.Name} for {totalCost}";
-        shopResponse.SetIsSuccess(true);
-        shopResponse.SetMessage(message);
+        player.RemoveCurrency(totalPrice);
 
         itemSlot.DecreaseQuantity(quantity);
 
@@ -64,6 +62,10 @@ public class Shop(string name)
         {
             _slots.Remove(itemName);
         }
+
+        var message = $"{ShopMessages.PurchaseSuccess} of {quantity} {item.Name} for {totalPrice}";
+        shopResponse.SetIsSuccess(true);
+        shopResponse.SetMessage(message);
 
         return shopResponse;
     }
@@ -94,9 +96,19 @@ public class Shop(string name)
         }
         else
         {
-            AddItem(item, item.VendorSellPrice, quantity);
+            var adjustedPrice = (int)Math.Round(item.VendorSellPrice * MarkupPercentage);
+            AddItem(item, adjustedPrice, quantity);
         }
 
+        var message = $"{ShopMessages.SaleSuccess} of {quantity} {item.Name} for {totalPrice}";
+        shopResponse.SetIsSuccess(true);
+        shopResponse.SetMessage(message);
+
         return shopResponse;
+    }
+
+    public void SetMarkupPercentage(decimal markupPercentage)
+    {
+        MarkupPercentage = markupPercentage;
     }
 }
