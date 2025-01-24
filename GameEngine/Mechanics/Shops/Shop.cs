@@ -19,13 +19,13 @@ public class Shop(string name)
         _slots.Add(item.Name, slot);
     }
 
-    public ShopResponse BuyItem(string itemName, Player player, int quantity = 1)
+    public ShopResponse PlayerBuysItem(string itemName, Player player, int quantity = 1)
     {
         var itemSlot = _slots[itemName];
         var item = itemSlot.Item;
         var totalCost = itemSlot.Price * quantity;
 
-        var shopResponse = new ShopResponse();
+        var shopResponse = new ShopResponse(itemName, quantity, totalCost);
 
         if (itemSlot.Quantity < quantity)
         {
@@ -58,11 +58,22 @@ public class Shop(string name)
         shopResponse.SetIsSuccess(true);
         shopResponse.SetMessage(message);
 
+        itemSlot.DecreaseQuantity(quantity);
+
+        if (itemSlot.Quantity == 0)
+        {
+            _slots.Remove(itemName);
+        }
+
         return shopResponse;
     }
 
-    public ShopResponse SellItem(Item item, Player player, int quantity = 1)
+    public ShopResponse PlayerSellsItem(Item item, Player player, int quantity = 1)
     {
         var totalPrice = item.SellPrice * quantity;
+
+        var shopResponse = new ShopResponse(item.Name, quantity, totalPrice);
+
+        return shopResponse;
     }
 }

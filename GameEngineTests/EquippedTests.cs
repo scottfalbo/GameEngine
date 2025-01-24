@@ -2,8 +2,8 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-using GameEngine.Compendium.Containers;
 using GameEngine.Compendium.Equippables;
+using GameEngine.Mechanics.Inventories;
 
 namespace GameEngineTests;
 

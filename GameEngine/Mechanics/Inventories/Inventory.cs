@@ -2,9 +2,13 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
+// ------------------------------------------
+// Game Engine: Mechanics and Collections
+// ------------------------------------------
+
 using GameEngine.Compendium.Abstracts;
 
-namespace GameEngine.Compendium.Containers;
+namespace GameEngine.Mechanics.Inventories;
 
 public class Inventory
 {

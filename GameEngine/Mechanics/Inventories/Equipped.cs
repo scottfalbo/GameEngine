@@ -6,7 +6,7 @@ using GameEngine.Compendium.Abstracts;
 using GameEngine.Compendium.Characters;
 using GameEngine.Compendium.Equippables;
 
-namespace GameEngine.Compendium.Containers;
+namespace GameEngine.Mechanics.Inventories;
 
 public class Equipped
 {

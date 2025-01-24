@@ -3,7 +3,7 @@
 // ------------------------------------------
 
 using GameEngine.Compendium.Characters;
-using GameEngine.Compendium.Containers;
+using GameEngine.Mechanics.Inventories;
 
 namespace GameEngine.Compendium.Abstracts;
 

@@ -3,9 +3,9 @@
 // ------------------------------------------
 
 using GameEngine.Compendium.Characters;
-using GameEngine.Compendium.Containers;
 using GameEngine.Compendium.Equippables;
 using GameEngine.Contracts;
+using GameEngine.Mechanics.Inventories;
 
 namespace GameEngine.Factories;
 
