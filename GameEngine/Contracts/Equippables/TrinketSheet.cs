@@ -4,8 +4,8 @@
 
 using GameEngine.Contracts.Abstracts;
 
-namespace GameEngine.Contracts.Items;
+namespace GameEngine.Contracts.Equippables;
 
-public class PotionSheet(string name) : ConsumableSheet(name)
+public class TrinketSheet(string name) : EquippableSheet(name)
 {
 }

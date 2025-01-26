@@ -17,11 +17,6 @@ internal abstract class Equippable(string name, EquippableType equipmentType)
 
     public Stats Stats { get; private set; } = new Stats();
 
-    public void SetArmor(int armor)
-    {
-        Stats.SetArmor(armor);
-    }
-
     public void SetDamage(int damage)
     {
         Damage = damage;

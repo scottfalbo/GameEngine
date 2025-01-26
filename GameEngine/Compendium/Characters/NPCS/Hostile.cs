@@ -2,13 +2,12 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using GameEngine.Compendium.Abstracts;
+using GameEngine.Compendium.Constants;
 
 namespace GameEngine.Compendium.Characters.NPCS;
-internal class Hostile
+
+internal class Hostile(string name, Creature creature) : NPC(name, NPCType.Hostile)
 {
+    public Creature Creature { get; private set; } = creature;
 }

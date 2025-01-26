@@ -6,6 +6,7 @@ using GameEngine.Contracts.Abstracts;
 
 namespace GameEngine.Contracts.Items;
 
-public class PotionSheet(string name) : ConsumableSheet(name)
+public class QuestItemSheet(string name, string questId) : ItemSheet(name)
 {
+    public string QuestId { get; set; } = questId;
 }

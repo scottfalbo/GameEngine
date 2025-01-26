@@ -9,8 +9,7 @@ namespace GameEngine.Compendium.Equippables;
 
 internal class Weapon : Equippable
 {
-    public Weapon(string name, int damage)
-        : base(name, EquippableType.Weapon)
+    public Weapon(string name, int damage) : base(name, EquippableType.Weapon)
     {
         SetDamage(damage);
     }

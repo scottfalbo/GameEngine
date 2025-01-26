@@ -6,6 +6,6 @@ using GameEngine.Contracts.Abstracts;
 
 namespace GameEngine.Contracts.Items;
 
-public class PotionSheet(string name) : ConsumableSheet(name)
+public class CraftingSheet(string name) : MaterialSheet(name)
 {
 }

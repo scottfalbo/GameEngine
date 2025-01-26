@@ -9,9 +9,8 @@ namespace GameEngine.Compendium.Equippables;
 
 internal class Armor : Equippable
 {
-    public Armor(string name, int armor)
-        : base(name, EquippableType.Armor)
+    public Armor(string name, int defense) : base(name, EquippableType.Armor)
     {
-        SetArmor(armor);
+        SetDefense(defense);
     }
 }
