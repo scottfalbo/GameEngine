@@ -11,7 +11,7 @@ internal abstract class Character(string name, Stats stats) : GameObjectBase(nam
 {
     public Equipped? Equipped { get; private set; }
 
-    public int HitPoints => GetHitPoints();
+    public int HitPoints { get; private set; } = stats.Health;
 
     public Inventory? Inventory { get; private set; }
 
@@ -71,6 +71,4 @@ internal abstract class Character(string name, Stats stats) : GameObjectBase(nam
     {
         Level = amount;
     }
-
-    private int GetHitPoints() => Stats.Health + Equipped!.EquippedStats.Health;
 }

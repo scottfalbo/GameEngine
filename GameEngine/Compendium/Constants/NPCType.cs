@@ -8,6 +8,7 @@ public enum NPCType
 {
     Extra,
     InnKeeper,
+    Hostile,
     Mystic,
     QuestGiver,
     Trainer,

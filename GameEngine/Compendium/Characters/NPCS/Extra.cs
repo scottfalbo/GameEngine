@@ -7,7 +7,6 @@ using GameEngine.Compendium.Constants;
 
 namespace GameEngine.Compendium.Characters.NPCS;
 
-internal class Extra(string name, string flavorText) : NPC(name, NPCType.Extra)
+internal class Extra(string name) : NPC(name, NPCType.Extra)
 {
-    public string FlavorText { get; private set; } = flavorText;
 }

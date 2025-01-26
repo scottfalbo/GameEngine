@@ -10,6 +10,8 @@ public abstract class CharacterSheet(string name) : BaseSheet(name)
 
     public List<ItemSheet> ItemSheets { get; set; } = [];
 
+    public int Level { get; set; }
+
     public int MaxInventorySlots { get; set; }
 
     public StatsSheet Stats { get; set; } = new StatsSheet();

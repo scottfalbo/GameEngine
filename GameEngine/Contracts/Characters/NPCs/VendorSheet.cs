@@ -2,8 +2,10 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-namespace GameEngine.Contracts.Abstracts;
+using GameEngine.Contracts.Abstracts;
 
-public class MaterialSheet(string name) : ItemSheet(name)
+namespace GameEngine.Contracts.Characters.NPCs;
+
+public class VendorSheet(string name) : NPCSheet(name)
 {
 }
