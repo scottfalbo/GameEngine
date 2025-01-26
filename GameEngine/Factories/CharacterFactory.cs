@@ -28,7 +28,7 @@ public abstract class CharacterFactory
         List<Armor> armors = [];
         List<Weapon> weapons = [];
 
-        foreach (var equipment in creationSheet.Equipment)
+        foreach (var equipment in creationSheet.Equippables)
         {
             if (equipment is Armor armor)
             {

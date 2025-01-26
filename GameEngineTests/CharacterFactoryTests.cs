@@ -87,8 +87,8 @@ public class CharacterFactoryTests
         var armor = _equipmentBuilder.BuildArmor();
         var weapon = _equipmentBuilder.BuildWeapon();
 
-        playerSheet.Equipment.Add(armor);
-        playerSheet.Equipment.Add(weapon);
+        playerSheet.Equippables.Add(armor);
+        playerSheet.Equippables.Add(weapon);
 
         // Act
         var player = _playerFactory.Create(playerSheet);

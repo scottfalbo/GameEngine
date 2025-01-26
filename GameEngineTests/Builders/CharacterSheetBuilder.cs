@@ -29,7 +29,7 @@ internal class CharacterSheetBuilder
         {
             Armor = _armor,
             Dexterity = _dexterity,
-            Equipment = _equipment,
+            Equippables = _equipment,
             ExperiencePoints = _experiencePoints,
             Health = _health,
             Intelligence = _intelligence,
@@ -48,7 +48,7 @@ internal class CharacterSheetBuilder
             Armor = _armor,
             Currency = _currency,
             Dexterity = _dexterity,
-            Equipment = _equipment,
+            Equippables = _equipment,
             Health = _health,
             Intelligence = _intelligence,
             Items = _items,
