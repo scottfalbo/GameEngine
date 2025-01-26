@@ -22,6 +22,12 @@ public abstract class Item(string name, ItemType type)
 
     public int VendorSellPrice { get; private set; } = 0;
 
+    public Item Clone()
+    {
+        var item = (Item)MemberwiseClone();
+        return item;
+    }
+
     public void SetFlavorText(string value)
     {
         FlavorText = value;

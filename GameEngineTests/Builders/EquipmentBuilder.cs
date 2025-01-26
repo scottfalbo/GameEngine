@@ -27,4 +27,10 @@ internal class EquipmentBuilder
 
         return weapon;
     }
+
+    public EquipmentBuilder WithName(string name)
+    {
+        _name = name;
+        return this;
+    }
 }

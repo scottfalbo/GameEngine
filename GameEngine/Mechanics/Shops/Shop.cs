@@ -11,15 +11,20 @@ public class Shop(string name)
 {
     private readonly Dictionary<string, ShopSlot> _slots = [];
 
+    private decimal _markupPercentage = 1m;
+
+    public decimal MarkupPercentage => _markupPercentage;
+
     public string Name { get; private set; } = name;
 
-    private decimal MarkupPercentage { get; set; } = 1m;
-
-    public void AddItem(Item item, int price, int quantity)
+    public void AddItem(Item item, int price)
     {
+        var quantity = item.Quantity;
         var slot = new ShopSlot(item, price, quantity);
         _slots.Add(item.Name, slot);
     }
+
+    public Dictionary<string, ShopSlot> GetSlots() => _slots;
 
     public ShopResponse PlayerBuysItem(string itemName, Player player, int quantity = 1)
     {
@@ -96,8 +101,10 @@ public class Shop(string name)
         }
         else
         {
-            var adjustedPrice = (int)Math.Round(item.VendorSellPrice * MarkupPercentage);
-            AddItem(item, adjustedPrice, quantity);
+            var itemClone = item.Clone();
+            itemClone.SetQuantity(quantity);
+            var adjustedPrice = (int)Math.Round(itemClone.VendorSellPrice * _markupPercentage);
+            AddItem(itemClone, adjustedPrice);
         }
 
         var message = $"{ShopMessages.SaleSuccess} of {quantity} {item.Name} for {totalPrice}";
@@ -107,8 +114,13 @@ public class Shop(string name)
         return shopResponse;
     }
 
+    public void RemoveItem(string itemName)
+    {
+        _slots.Remove(itemName);
+    }
+
     public void SetMarkupPercentage(decimal markupPercentage)
     {
-        MarkupPercentage = markupPercentage;
+        _markupPercentage = markupPercentage;
     }
 }
