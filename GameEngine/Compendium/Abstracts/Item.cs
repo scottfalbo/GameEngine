@@ -10,6 +10,8 @@ public abstract class Item(string name, ItemType type)
 {
     public string? FlavorText { get; private set; }
 
+    public Guid Id { get; private set; } = Guid.NewGuid();
+
     public bool IsStackable { get; private set; } = false;
 
     public ItemType ItemType { get; private set; } = type;
@@ -25,6 +27,7 @@ public abstract class Item(string name, ItemType type)
     public Item Clone()
     {
         var item = (Item)MemberwiseClone();
+        item.Id = Guid.NewGuid();
         return item;
     }
 

@@ -13,6 +13,8 @@ public abstract class Character(string name, CharacterStats stats)
 
     public int HitPoints { get; private set; } = stats.Health;
 
+    public Guid Id { get; private set; } = Guid.NewGuid();
+
     public Inventory? Inventory { get; private set; }
 
     public int Level { get; private set; } = 1;

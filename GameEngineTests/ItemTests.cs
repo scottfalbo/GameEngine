@@ -31,5 +31,7 @@ public class ItemTests
         Assert.AreEqual(item.IsStackable, clone.IsStackable);
         Assert.AreEqual(item.FlavorText, clone.FlavorText);
         Assert.AreEqual(item.ItemType, clone.ItemType);
+
+        Assert.AreNotEqual(item.Id, clone.Id);
     }
 }
