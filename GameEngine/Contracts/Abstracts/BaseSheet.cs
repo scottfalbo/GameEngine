@@ -8,5 +8,5 @@ public abstract class BaseSheet(string name)
 {
     public string? FlavorText { get; set; }
 
-    public string Name { get; set; } = name;
+    public string Name { get; private set; } = name;
 }

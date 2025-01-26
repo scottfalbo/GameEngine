@@ -12,7 +12,5 @@ public abstract class CharacterSheet(string name) : BaseSheet(name)
 
     public int Level { get; set; }
 
-    public int MaxInventorySlots { get; set; }
-
     public StatsSheet Stats { get; set; } = new StatsSheet();
 }
