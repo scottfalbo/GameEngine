@@ -2,11 +2,11 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
+using GameEngine.Compendium.Constants;
 using GameEngine.Contracts.Abstracts;
 
-namespace GameEngine.Contracts;
+namespace GameEngine.Contracts.Items;
 
-public class PlayerSheet(string name) : CharacterSheet(name)
+public class PotionSheet(string name) : ConsumableSheet(name, ConsumableType.Potion)
 {
-    public int Currency { get; set; }
 }

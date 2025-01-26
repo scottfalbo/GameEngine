@@ -5,7 +5,7 @@
 using GameEngine.Compendium.Constants;
 using GameEngine.Contracts.Abstracts;
 
-namespace GameEngine.Contracts;
+namespace GameEngine.Contracts.Characters;
 
 public class CreatureSheet(string name) : CharacterSheet(name)
 {

@@ -9,7 +9,7 @@ namespace GameEngine.Factories;
 
 public class ArmorFactory : EquipmentFactory
 {
-    public Armor Create(EquipmentSheet creationSheet)
+    public Armor Create(EquippableSheet creationSheet)
     {
         var armor = new Armor(
             creationSheet.Name,

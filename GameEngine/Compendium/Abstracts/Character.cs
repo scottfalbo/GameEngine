@@ -2,23 +2,20 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
+using GameEngine.Compendium.Constants;
 using GameEngine.Mechanics.Inventories;
 
 namespace GameEngine.Compendium.Abstracts;
 
-public abstract class Character(string name, Stats stats)
+public abstract class Character(string name, Stats stats) : GameObjectBase(name, GameObjectType.Character)
 {
     public Equipped? Equipped { get; private set; }
 
     public int HitPoints { get; private set; } = stats.Health;
 
-    public Guid Id { get; private set; } = Guid.NewGuid();
-
     public Inventory? Inventory { get; private set; }
 
     public int Level { get; private set; } = 1;
-
-    public string Name { get; private set; } = name;
 
     public Stats Stats { get; private set; } = stats;
 

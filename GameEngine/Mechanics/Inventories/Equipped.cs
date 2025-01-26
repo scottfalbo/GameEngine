@@ -162,17 +162,23 @@ public class Equipped
 
     private void AdjustEquippedStats(Equippable equipment, bool unequip = false)
     {
-        var armor = unequip ? _equippedStats.Armor - equipment.Armor : _equippedStats.Armor + equipment.Armor;
-        var dexterity = unequip ? _equippedStats.Dexterity - equipment.Dexterity : _equippedStats.Dexterity + equipment.Dexterity;
-        var health = unequip ? _equippedStats.Health - equipment.Health : _equippedStats.Health + equipment.Health;
-        var intelligence = unequip ? _equippedStats.Intelligence - equipment.Intelligence : _equippedStats.Intelligence + equipment.Intelligence;
-        var strength = unequip ? _equippedStats.Strength - equipment.Strength : _equippedStats.Strength + equipment.Strength;
+        var equipmentArmor = equipment.Stats.Armor;
+        var equipmentDexterity = equipment.Stats.Dexterity;
+        var equipmentHealth = equipment.Stats.Health;
+        var equipmentIntelligence = equipment.Stats.Intelligence;
+        var equipmentStrength = equipment.Stats.Strength;
 
-        _equippedStats.SetArmor(armor);
-        _equippedStats.SetDexterity(dexterity);
-        _equippedStats.SetHealth(health);
-        _equippedStats.SetIntelligence(intelligence);
-        _equippedStats.SetStrength(strength);
+        var adjustedArmor = unequip ? _equippedStats.Armor - equipmentArmor : _equippedStats.Armor + equipmentArmor;
+        var adjustedDexterity = unequip ? _equippedStats.Dexterity - equipmentDexterity : _equippedStats.Dexterity + equipmentDexterity;
+        var adjustedHealth = unequip ? _equippedStats.Health - equipmentHealth : _equippedStats.Health + equipmentHealth;
+        var adjustedIntelligence = unequip ? _equippedStats.Intelligence - equipmentIntelligence : _equippedStats.Intelligence + equipmentIntelligence;
+        var adjustedStrength = unequip ? _equippedStats.Strength - equipmentStrength : _equippedStats.Strength + equipmentStrength;
+
+        _equippedStats.SetArmor(adjustedArmor);
+        _equippedStats.SetDexterity(adjustedDexterity);
+        _equippedStats.SetHealth(adjustedHealth);
+        _equippedStats.SetIntelligence(adjustedIntelligence);
+        _equippedStats.SetStrength(adjustedStrength);
     }
 
     private bool ArmorIsInRange(int slot) => slot >= 0 && slot < _armorSlots;

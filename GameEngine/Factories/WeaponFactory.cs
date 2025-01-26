@@ -9,7 +9,7 @@ namespace GameEngine.Factories;
 
 public class WeaponFactory : EquipmentFactory
 {
-    public Weapon Create(EquipmentSheet creationSheet)
+    public Weapon Create(EquippableSheet creationSheet)
     {
         var weapon = new Weapon(
             creationSheet.Name,

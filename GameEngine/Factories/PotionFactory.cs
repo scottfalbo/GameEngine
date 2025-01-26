@@ -3,7 +3,7 @@
 // ------------------------------------------
 
 using GameEngine.Compendium.Items;
-using GameEngine.Contracts;
+using GameEngine.Contracts.Items;
 
 namespace GameEngine.Factories;
 

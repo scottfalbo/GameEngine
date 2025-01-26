@@ -2,10 +2,6 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-// ------------------------------------------
-// Game Engine: Mechanics and Collections
-// ------------------------------------------
-
 using GameEngine.Compendium.Constants;
 
 namespace GameEngine.Contracts.Abstracts;
