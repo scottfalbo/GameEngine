@@ -2,7 +2,7 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-using GameEngine.Compendium.Constants;
+using GameEngine.Constants;
 
 namespace GameEngine.Contracts.Abstracts;
 
