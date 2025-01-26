@@ -6,7 +6,7 @@ using GameEngine.Compendium.Constants;
 
 namespace GameEngine.Compendium.Abstracts;
 
-public abstract class Item(string name, ItemType type) : GameObjectBase(name, GameObjectType.Item)
+internal abstract class Item(string name, ItemType type) : GameObjectBase(name, GameObjectType.Item)
 {
     public bool IsStackable { get; private set; } = false;
 

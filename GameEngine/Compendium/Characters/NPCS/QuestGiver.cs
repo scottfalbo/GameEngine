@@ -7,6 +7,6 @@ using GameEngine.Compendium.Constants;
 
 namespace GameEngine.Compendium.Characters.NPCS;
 
-public class QuestGiver(string name) : NPC(name, NPCType.QuestGiver)
+internal class QuestGiver(string name) : NPC(name, NPCType.QuestGiver)
 {
 }

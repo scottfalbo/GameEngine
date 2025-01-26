@@ -6,7 +6,7 @@ using GameEngine.Contracts.Abstracts;
 
 namespace GameEngine.Mechanics.Shops;
 
-public class ShopSlot(ItemSheet itemSheet)
+internal class ShopSlot(ItemSheet itemSheet)
 {
     public ItemSheet ItemSheet { get; private set; } = itemSheet;
 

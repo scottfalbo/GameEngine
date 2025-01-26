@@ -7,7 +7,7 @@ using GameEngine.Mechanics.Inventories;
 
 namespace GameEngine.Compendium.Abstracts;
 
-public abstract class Character(string name, Stats stats) : GameObjectBase(name, GameObjectType.Character)
+internal abstract class Character(string name, Stats stats) : GameObjectBase(name, GameObjectType.Character)
 {
     public Equipped? Equipped { get; private set; }
 

@@ -7,7 +7,7 @@ using GameEngine.Contracts.Abstracts;
 
 namespace GameEngine.Mechanics.Shops;
 
-public class Shop(string name)
+internal class Shop(string name)
 {
     private readonly Dictionary<string, ShopSlot> _slots = [];
 

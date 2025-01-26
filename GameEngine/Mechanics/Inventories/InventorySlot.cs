@@ -2,15 +2,11 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-// ------------------------------------------
-// Game Engine: Mechanics and Collections
-// ------------------------------------------
-
 using GameEngine.Compendium.Abstracts;
 
 namespace GameEngine.Mechanics.Inventories;
 
-public class InventorySlot
+internal class InventorySlot
 {
     public bool HasItem => Item != null;
 

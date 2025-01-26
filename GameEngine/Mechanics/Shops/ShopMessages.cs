@@ -4,7 +4,7 @@
 
 namespace GameEngine.Mechanics.Shops;
 
-public static class ShopMessages
+internal static class ShopMessages
 {
     public const string InsufficientFunds = "You do not have enough currency to purchase this item.";
 

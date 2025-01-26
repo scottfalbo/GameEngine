@@ -6,7 +6,7 @@ using GameEngine.Compendium.Characters;
 
 namespace GameEngine;
 
-public class GameState
+internal class GameState
 {
     private static GameState? _instance;
 

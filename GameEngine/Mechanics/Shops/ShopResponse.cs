@@ -4,7 +4,7 @@
 
 namespace GameEngine.Mechanics.Shops;
 
-public class ShopResponse(string itemName, int quantity, int totalCost)
+internal class ShopResponse(string itemName, int quantity, int totalCost)
 {
     public bool IsSuccess { get; private set; }
 

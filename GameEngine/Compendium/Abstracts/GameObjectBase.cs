@@ -6,7 +6,7 @@ using GameEngine.Compendium.Constants;
 
 namespace GameEngine.Compendium.Abstracts;
 
-public abstract class GameObjectBase(string name, GameObjectType gameObjectType)
+internal abstract class GameObjectBase(string name, GameObjectType gameObjectType)
 {
     public string? FlavorText { get; private set; }
 

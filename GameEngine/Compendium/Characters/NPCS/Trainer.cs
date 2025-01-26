@@ -7,6 +7,6 @@ using GameEngine.Compendium.Constants;
 
 namespace GameEngine.Compendium.Characters.NPCS;
 
-public class Trainer(string name) : NPC(name, NPCType.Trainer)
+internal class Trainer(string name) : NPC(name, NPCType.Trainer)
 {
 }

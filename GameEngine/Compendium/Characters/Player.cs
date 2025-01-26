@@ -6,7 +6,7 @@ using GameEngine.Compendium.Abstracts;
 
 namespace GameEngine.Compendium.Characters;
 
-public class Player(string name, Stats stats)
+internal class Player(string name, Stats stats)
     : Character(name, stats)
 {
     public int Currency { get; private set; } = 0;

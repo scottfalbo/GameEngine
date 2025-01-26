@@ -12,6 +12,12 @@
     <Folder Include="Contracts\Equippables\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+      <_Parameter1>GameEngineTests</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
   <Target Name="PostBuild" AfterTargets="Build">
     <Copy SourceFiles="$(TargetPath)" DestinationFolder="C:\Users\scott\source\repos\Unity\RPG_v1\Assets\Plugins" />
   </Target>

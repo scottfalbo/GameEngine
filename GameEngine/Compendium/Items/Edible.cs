@@ -7,7 +7,7 @@ using GameEngine.Compendium.Constants;
 
 namespace GameEngine.Compendium.Items;
 
-public class Edible : Consumable
+internal class Edible : Consumable
 {
     public Edible(string name, int adjustmentAmount, Stat targetStat, int quantity = 1)
         : base(name, adjustmentAmount, ConsumableType.Edible, targetStat)

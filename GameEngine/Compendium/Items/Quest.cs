@@ -5,9 +5,9 @@
 using GameEngine.Compendium.Abstracts;
 using GameEngine.Compendium.Constants;
 
-namespace GameEngine.Compendium;
+namespace GameEngine.Compendium.Items;
 
-public class Quest(string name, string questId) : Item(name, ItemType.Quest)
+internal class Quest(string name, string questId) : Item(name, ItemType.Quest)
 {
     public string QuestId { get; private set; } = questId;
 }

@@ -7,7 +7,7 @@ using GameEngine.Compendium.Constants;
 
 namespace GameEngine.Compendium.Items;
 
-public class Potion : Consumable
+internal class Potion : Consumable
 {
     public Potion(string name, int adjustmentAmount, Stat targetStat, int quantity = 1)
         : base(name, adjustmentAmount, ConsumableType.Potion, targetStat)

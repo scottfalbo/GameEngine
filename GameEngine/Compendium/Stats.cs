@@ -4,7 +4,7 @@
 
 namespace GameEngine.Compendium;
 
-public class Stats()
+internal class Stats()
 {
     public int Armor { get; private set; }
 

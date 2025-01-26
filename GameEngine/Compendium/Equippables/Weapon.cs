@@ -7,7 +7,7 @@ using GameEngine.Compendium.Constants;
 
 namespace GameEngine.Compendium.Equippables;
 
-public class Weapon : Equippable
+internal class Weapon : Equippable
 {
     public Weapon(string name, int damage)
         : base(name, EquippableType.Weapon)

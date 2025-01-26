@@ -7,6 +7,6 @@ using GameEngine.Compendium.Constants;
 
 namespace GameEngine.Compendium.Equippables;
 
-public class Trinket(string name) : Equippable(name, EquippableType.Trinkets)
+internal class Trinket(string name) : Equippable(name, EquippableType.Trinkets)
 {
 }

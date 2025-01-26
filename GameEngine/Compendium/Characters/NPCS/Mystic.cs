@@ -7,7 +7,7 @@ using GameEngine.Compendium.Constants;
 
 namespace GameEngine.Compendium.Characters.NPCS;
 
-public class Mystic(string name) : NPC(name, NPCType.Mystic)
+internal class Mystic(string name) : NPC(name, NPCType.Mystic)
 {
     public void HealerPlayer(Player player)
     {

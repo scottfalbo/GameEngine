@@ -7,7 +7,7 @@ using GameEngine.Compendium.Constants;
 
 namespace GameEngine.Compendium.Characters;
 
-public class Creature(string name, Stats stats, CreatureType creatureType)
+internal class Creature(string name, Stats stats, CreatureType creatureType)
     : Character(name, stats)
 {
     public CreatureType CreatureType { get; private set; } = creatureType;

@@ -13,4 +13,6 @@ public abstract class CharacterSheet(string name) : BaseSheet(name)
     public List<Item> Items { get; set; } = [];
 
     public int MaxInventorySlots { get; set; }
+
+    public StatsSheet Stats { get; set; } = new StatsSheet();
 }

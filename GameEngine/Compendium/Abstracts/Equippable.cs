@@ -6,10 +6,12 @@ using GameEngine.Compendium.Constants;
 
 namespace GameEngine.Compendium.Abstracts;
 
-public abstract class Equippable(string name, EquippableType equipmentType)
+internal abstract class Equippable(string name, EquippableType equipmentType)
     : Item(name, ItemType.Equipment)
 {
     public int Damage { get; private set; } = 0;
+
+    public int Defense { get; private set; } = 0;
 
     public EquippableType EquipmentType { get; private set; } = equipmentType;
 
@@ -23,5 +25,10 @@ public abstract class Equippable(string name, EquippableType equipmentType)
     public void SetDamage(int damage)
     {
         Damage = damage;
+    }
+
+    public void SetDefense(int defense)
+    {
+        Defense = defense;
     }
 }

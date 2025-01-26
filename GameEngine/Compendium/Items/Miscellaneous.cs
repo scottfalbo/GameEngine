@@ -7,6 +7,6 @@ using GameEngine.Compendium.Constants;
 
 namespace GameEngine.Compendium.Items;
 
-public class Miscellaneous(string name) : Item(name, ItemType.Miscellaneous)
+internal class Miscellaneous(string name) : Item(name, ItemType.Miscellaneous)
 {
 }

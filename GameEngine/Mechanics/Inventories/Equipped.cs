@@ -8,7 +8,7 @@ using GameEngine.Compendium.Equippables;
 
 namespace GameEngine.Mechanics.Inventories;
 
-public class Equipped
+internal class Equipped
 {
     private readonly Dictionary<int, Armor?> _armor;
     private readonly Dictionary<int, Weapon?> _weapons;
