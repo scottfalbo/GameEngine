@@ -2,12 +2,11 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-using GameEngine.Compendium.Characters;
 using GameEngine.Mechanics.Inventories;
 
 namespace GameEngine.Compendium.Abstracts;
 
-public abstract class Character(string name, CharacterStats stats)
+public abstract class Character(string name, Stats stats)
 {
     public Equipped? Equipped { get; private set; }
 
@@ -21,7 +20,7 @@ public abstract class Character(string name, CharacterStats stats)
 
     public string Name { get; private set; } = name;
 
-    public CharacterStats Stats { get; private set; } = stats;
+    public Stats Stats { get; private set; } = stats;
 
     public void AddEquipped(Equipped equipped)
     {
@@ -43,16 +42,17 @@ public abstract class Character(string name, CharacterStats stats)
         HitPoints -= amount;
     }
 
-    public CharacterStats GetAdjustedStats()
+    public Stats GetAdjustedStats()
     {
         var equippedStats = Equipped!.EquippedStats;
 
-        var adjustedStats = new CharacterStats(
-            Stats.Armor + equippedStats.Armor,
-            Stats.Dexterity + equippedStats.Dexterity,
-            Stats.Health + equippedStats.Health,
-            Stats.Intelligence + equippedStats.Intelligence,
-            Stats.Strength + equippedStats.Strength);
+        var adjustedStats = new Stats();
+
+        adjustedStats.SetArmor(Stats.Armor + equippedStats.Armor);
+        adjustedStats.SetDexterity(Stats.Dexterity + equippedStats.Dexterity);
+        adjustedStats.SetHealth(Stats.Health + equippedStats.Health);
+        adjustedStats.SetIntelligence(Stats.Intelligence + equippedStats.Intelligence);
+        adjustedStats.SetStrength(Stats.Strength + equippedStats.Strength);
 
         return adjustedStats;
     }

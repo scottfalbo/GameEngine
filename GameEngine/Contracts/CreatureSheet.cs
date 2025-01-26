@@ -3,6 +3,7 @@
 // ------------------------------------------
 
 using GameEngine.Compendium.Constants;
+using GameEngine.Contracts.Abstracts;
 
 namespace GameEngine.Contracts;
 

@@ -4,9 +4,9 @@
 
 using GameEngine.Compendium.Constants;
 
-namespace GameEngine.Contracts;
+namespace GameEngine.Contracts.Abstracts;
 
-public class EquipmentSheet(string name, EquippableType type) : BaseSheet(name)
+public abstract class EquipmentSheet(string name, EquippableType type) : BaseSheet(name)
 {
     public int Damage { get; set; }
 

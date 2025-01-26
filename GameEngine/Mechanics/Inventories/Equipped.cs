@@ -2,8 +2,8 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
+using GameEngine.Compendium;
 using GameEngine.Compendium.Abstracts;
-using GameEngine.Compendium.Characters;
 using GameEngine.Compendium.Equippables;
 
 namespace GameEngine.Mechanics.Inventories;
@@ -14,10 +14,10 @@ public class Equipped
     private readonly Dictionary<int, Weapon?> _weapons;
 
     private int _armorSlots;
-    private CharacterStats _equippedStats;
+    private Stats _equippedStats;
     private int _weaponSlots;
 
-    public CharacterStats EquippedStats => _equippedStats;
+    public Stats EquippedStats => _equippedStats;
 
     public Equipped(int armorSlots, int weaponSlots)
     {
@@ -37,7 +37,7 @@ public class Equipped
             _weapons.Add(i, null);
         }
 
-        _equippedStats = new CharacterStats(0, 0, 0, 0, 0);
+        _equippedStats = new Stats();
     }
 
     public void DecreaseArmorSlots(int amount)

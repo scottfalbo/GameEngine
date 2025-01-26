@@ -21,6 +21,7 @@ public abstract class Equippable(string name, EquippableType equipmentType)
 
     public int Intelligence { get; private set; } = 0;
 
+    public Stats Stats { get; private set; } = new Stats();
     public int Strength { get; private set; } = 0;
 
     public void SetArmor(int value)

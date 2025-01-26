@@ -2,24 +2,19 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-namespace GameEngine.Compendium.Characters;
+namespace GameEngine.Compendium;
 
-public class CharacterStats(
-    int armor,
-    int dexterity,
-    int health,
-    int intelligence,
-    int strength)
+public class Stats()
 {
-    public int Armor { get; private set; } = armor;
+    public int Armor { get; private set; }
 
-    public int Dexterity { get; private set; } = dexterity;
+    public int Dexterity { get; private set; }
 
-    public int Health { get; private set; } = health;
+    public int Health { get; private set; }
 
-    public int Intelligence { get; private set; } = intelligence;
+    public int Intelligence { get; private set; }
 
-    public int Strength { get; private set; } = strength;
+    public int Strength { get; private set; }
 
     public void SetArmor(int value)
     {

@@ -2,16 +2,16 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-using GameEngine.Compendium.Characters;
+using GameEngine.Compendium;
 using GameEngine.Compendium.Equippables;
-using GameEngine.Contracts;
+using GameEngine.Contracts.Abstracts;
 using GameEngine.Mechanics.Inventories;
 
 namespace GameEngine.Factories;
 
 public abstract class CharacterFactory
 {
-    protected static CharacterStats CreateCharacterStats(CharacterSheet creationSheet)
+    protected static Stats CreateCharacterStats(CharacterSheet creationSheet)
     {
         var stats = new CharacterStats(
             creationSheet.Armor,

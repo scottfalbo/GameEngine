@@ -22,18 +22,6 @@ public class ShopTests
     }
 
     [TestMethod]
-    public void AddItem_AddEquipment_AddsItemsAndEquipmentToShop()
-    {
-        // Arrange
-        var item1 = _itemBuilder.WithName("Test Potion 1").BuildPotion();
-        var item2 = _itemBuilder.WithName("Test Potion 2").BuildPotion();
-        var weapon1 = _equipmentBuilder.WithName("Test Weapon 1").BuildWeapon();
-        var weapon2 = _equipmentBuilder.WithName("Test Weapon 2").BuildWeapon();
-        var armor1 = _equipmentBuilder.WithName("Test Armor 1").BuildArmor();
-        var armor2 = _equipmentBuilder.WithName("Test Armor 2").BuildArmor();
-    }
-
-    [TestMethod]
     public void Constructor_CreatesEmptyShop()
     {
         // Arrange

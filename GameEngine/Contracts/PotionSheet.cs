@@ -3,12 +3,10 @@
 // ------------------------------------------
 
 using GameEngine.Compendium.Constants;
+using GameEngine.Contracts.Abstracts;
 
 namespace GameEngine.Contracts;
 
-public class PotionSheet(string name) : ItemSheet(name)
+public class PotionSheet(string name) : ConsumableSheet(name, ConsumableType.Potion)
 {
-    public int AdjustmentAmount { get; set; }
-
-    public Stat TargetStat { get; set; }
 }

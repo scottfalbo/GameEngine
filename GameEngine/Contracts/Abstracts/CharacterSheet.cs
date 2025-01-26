@@ -4,7 +4,7 @@
 
 using GameEngine.Compendium.Abstracts;
 
-namespace GameEngine.Contracts;
+namespace GameEngine.Contracts.Abstracts;
 
 public abstract class CharacterSheet(string name) : BaseSheet(name)
 {

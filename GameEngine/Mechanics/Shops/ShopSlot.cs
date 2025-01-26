@@ -2,29 +2,23 @@
 // Game Engine: Mechanics and Collections
 // ------------------------------------------
 
-using GameEngine.Compendium.Abstracts;
+using GameEngine.Contracts.Abstracts;
 
 namespace GameEngine.Mechanics.Shops;
 
-public class ShopSlot(Item item, int price, int quantity)
+public class ShopSlot(ItemSheet itemSheet)
 {
-    public Item Item { get; private set; } = item;
+    public ItemSheet ItemSheet { get; private set; } = itemSheet;
 
-    public int Price { get; private set; } = price;
-
-    public int Quantity { get; private set; } = quantity;
+    public int VendorSellPrice { get; private set; } = itemSheet.VendorSellPrice;
 
     public void DecreaseQuantity(int amount)
     {
-        Quantity = Quantity - amount < 0 ? 0 : Quantity - amount;
-        Item.SetQuantity(Quantity);
+        ItemSheet.Quantity = ItemSheet.Quantity - amount < 0 ? 0 : ItemSheet.Quantity - amount;
     }
 
-    public bool IncreaseQuantity(int amount)
+    public void IncreaseQuantity(int amount)
     {
-        Quantity += amount;
-        Item.SetQuantity(Quantity);
-
-        return true;
+        ItemSheet.Quantity += amount;
     }
 }
