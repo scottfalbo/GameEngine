@@ -7,6 +7,7 @@ namespace GameEngine.Compendium.Constants;
 public enum NPCType
 {
     Extra,
+    InnKeeper,
     Mystic,
     QuestGiver,
     Trainer,
